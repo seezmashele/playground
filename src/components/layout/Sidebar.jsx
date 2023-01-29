@@ -44,7 +44,7 @@ const Sidebar = () => {
         <Search className="mr-4" />
         <div className="">Search</div>
       </div> */}
-      <div className="box_radius mt-5 overflow-hidden bg-neutral-50 py-4">
+      <div className="box_radius bg-neutral-50F mt-5 overflow-hidden py-4">
         {/* {tempTags && (
           <>
             <SidebarTitle title="Trending Topics" />

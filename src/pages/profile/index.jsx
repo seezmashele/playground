@@ -10,6 +10,7 @@ import {
 } from 'react-bootstrap-icons'
 import PageHead from '../../components/misc/PageHead'
 import ProfileSidebar from '../../components/layout/ProfileSidebar'
+import EventsBlock from '../../components/blocks/EventsBlock'
 import ArticlesListBlock from '../../components/blocks/ArticlesListBlock'
 import { useDatabase } from '../../context/DatabaseContext'
 import MainDrawer from '../../components/layout/MainDrawer'
@@ -79,7 +80,7 @@ const HomePage = () => {
       <Nav />
       <div className="h-12" />
 
-      <div className="mx-auto ml-56 flex w-full max-w-5xl">
+      <div className="max-w-5xlF mx-auto ml-56 flex w-full">
         <MainDrawer />
         <div className="">
           <main className="border_color--main page_padding_x w-full overflow-hidden">
@@ -104,7 +105,9 @@ const HomePage = () => {
                       />
                     </div>
                     <div className="text-sm">
-                      <h3 className="text-2xl font-bold">{tempProfileName}</h3>
+                      <h3 className="text-2xl font-semibold">
+                        {tempProfileName}
+                      </h3>
                       <p className="light_text_color mt-0.5">@chlodawg911</p>
                       <p className="mt-4 leading-relaxed">
                         Destroyer of sesame chicken wraps <br />
@@ -114,7 +117,7 @@ const HomePage = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="sidebar_width box_radius shrink-0 overflow-hidden bg-neutral-50 py-1">
+                  <div className="sidebar_width box_radius hidden shrink-0 overflow-hidden bg-neutral-50 py-1">
                     <div className="px-5 py-3 text-base font-bold">Links</div>
                     {usersLinks &&
                       usersLinks.map((item) => (
@@ -136,13 +139,14 @@ const HomePage = () => {
           <main className="page_width_wide mx-auto flex w-full flex-row">
             <div className="main_content_container border-t border-neutral-150">
               {newsPageArticles1 && (
-                <ArticlesListBlock
-                  articles={newsPageArticles1}
-                  title="Latest posts"
-                />
+                // <ArticlesListBlock
+                //   articles={newsPageArticles1}
+                //   title="Latest posts"
+                // />
+                <EventsBlock events={newsPageArticles1} title="Latest posts" />
               )}
             </div>
-            <ProfileSidebar />
+            {/* <ProfileSidebar /> */}
           </main>
         </div>
       </div>

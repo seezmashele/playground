@@ -150,7 +150,7 @@ img:not([src]) {
   }
 
   .card_title {
-    @apply cursor-pointer text-xl font-bold leading-snug hover:underline;
+    @apply cursor-pointer text-xl font-semibold leading-snug hover:underline;
   }
 
   .card_text {

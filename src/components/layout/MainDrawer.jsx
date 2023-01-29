@@ -27,14 +27,14 @@ const MainDrawer = ({ selectedPageIndex = -1 }) => {
         {navPageButtons &&
           navPageButtons.map((item, index) => (
             <Link href={item.link} passHref key={`maindrawerbutton${index}`}>
-              <div className="box_radius mt-0 flex cursor-pointer select-none py-1.5 px-2 hover:bg-neutral-100">
+              <div className="box_radiusF mt-0 flex cursor-pointer select-none rounded-full py-1.5 px-2 hover:bg-neutral-100">
                 <div className="mr-2 flex h-7 w-7 items-center justify-center text-base">
                   {item.icon}
                 </div>
                 <div className="flex items-center px-1">
                   <div
                     className={`text-base ${
-                      selectedPageIndex === index && 'font-bold'
+                      selectedPageIndex === index && 'font-semibold'
                     }`}
                   >
                     {item.title}

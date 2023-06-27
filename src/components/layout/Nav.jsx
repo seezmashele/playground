@@ -20,11 +20,16 @@ const Nav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
         <div className="align-center flex h-full w-full items-center justify-between">
           <div className="flex h-7 w-48">
             <Link href="/" passHref>
-              <div className="h-7 w-32 flex-shrink-0 cursor-pointer select-none">
+              <div className="h-8 w-36 flex-shrink-0 cursor-pointer select-none">
                 <img
                   className="h-full w-full object-contain object-left"
+                  // src={
+                  //   theme === "dark" ? "/logo-min-white.svg" : "/logo-min.svg"
+                  // }
                   src={
-                    theme === "dark" ? "/logo-min-white.svg" : "/logo-min.svg"
+                    theme === "dark"
+                      ? "/logo-min-white.svg"
+                      : "/logo-events.png"
                   }
                   alt="playground logo"
                 />

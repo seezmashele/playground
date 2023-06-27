@@ -1,23 +1,23 @@
-import { useEffect, useRef, useState } from 'react'
-import { LexicalComposer } from '@lexical/react/LexicalComposer'
-import { PlainTextPlugin } from '@lexical/react/LexicalPlainTextPlugin'
-import { ContentEditable } from '@lexical/react/LexicalContentEditable'
-import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
-import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin'
-import { useForm } from 'react-hook-form'
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
-import { Image, Upload, ChatSquareText } from 'react-bootstrap-icons'
-import { useMutation } from '@apollo/client'
-import Nav from '../../components/layout/Nav'
-import PageHead from '../../components/misc/PageHead'
-import { storage } from '../../utils/firebase'
+import { useEffect, useRef, useState } from "react"
+import { LexicalComposer } from "@lexical/react/LexicalComposer"
+import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin"
+import { ContentEditable } from "@lexical/react/LexicalContentEditable"
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin"
+import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
+import { useForm } from "react-hook-form"
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage"
+import { Image, Upload, ChatSquareText } from "react-bootstrap-icons"
+import { useMutation } from "@apollo/client"
+import Nav from "../../components/layout/Nav"
+import PageHead from "../../components/misc/PageHead"
+import { storage } from "../../utils/firebase"
 import {
   stringToSlug,
   getEditorStateOverview
-} from '../../utils/helpers/strings'
-import { CREATE_ARTICLE_MUTATION } from '../../utils/graphql/Mutations'
-import LexicalToolbar from '../../components/widgets/LexicalToolbar'
-import Footer from '../../components/layout/Footer'
+} from "../../utils/helpers/strings"
+import { CREATE_ARTICLE_MUTATION } from "../../utils/graphql/Mutations"
+import LexicalToolbar from "../../components/widgets/LexicalToolbar"
+import Footer from "../../components/layout/Footer"
 
 const HomePage = () => {
   const editorStateRef = useRef()
@@ -28,10 +28,10 @@ const HomePage = () => {
   )
 
   const theme = {}
-  const onError = (err) => err
+  const onError = err => err
 
   const initialConfig = {
-    namespace: 'MyEditor',
+    namespace: "MyEditor",
     theme,
     onError
   }
@@ -47,7 +47,7 @@ const HomePage = () => {
     formState: { errors }
   } = useForm()
 
-  const submitNewDocument = async (data) => {
+  const submitNewDocument = async data => {
     if (imageToUpload && data && data.title && editorStateRef.current) {
       setSubmitting(true)
       try {
@@ -55,8 +55,8 @@ const HomePage = () => {
         const overview = getEditorStateOverview(editorStateRef.current)
         const itemSlug = stringToSlug(data.title)
         const imageRef = ref(storage, `images/posts/${itemSlug}`)
-        uploadBytes(imageRef, imageToUpload).then((snapshot) => {
-          getDownloadURL(snapshot.ref).then(async (url) => {
+        uploadBytes(imageRef, imageToUpload).then(snapshot => {
+          getDownloadURL(snapshot.ref).then(async url => {
             await createArticleMutation({
               variables: {
                 title: data.title,
@@ -89,16 +89,15 @@ const HomePage = () => {
               <ChatSquareText />
             </div>
             <div className="whitespace-nowrap text-sm">
-              {`Create a post | `}
+              {`Creating a post as `}
               <span className="font-semibold">miragrox</span>
             </div>
           </div>
-          <div className='flex'>
-
-          <div
+          <div className="flex">
+            <div
               role="status"
               className={`mr-5 flex w-auto items-center text-accent-main ${
-                !submitting && 'hidden'
+                !submitting && "hidden"
               }`}
             >
               <svg
@@ -123,19 +122,19 @@ const HomePage = () => {
               </svg>
               <div className="select-none text-sm">Uploading post</div>
             </div>
-          <button
-            type="button"
-            onClick={handleSubmit(submitNewDocument)}
-            className="box_radius h-8F flex cursor-pointer select-none items-center bg-accent-main px-3 pt-1.5 pb-2 text-sm font-semibold text-white hover:bg-accent-main-hover"
+            <button
+              type="button"
+              onClick={handleSubmit(submitNewDocument)}
+              className="box_radius h-8F flex cursor-pointer select-none items-center bg-accent-main px-3 pt-1.5 pb-2 text-sm font-semibold text-white hover:bg-accent-main-hover"
             >
-            <Upload className="mr-2.5 h-3.5 w-3.5" />
-            Publish
-          </button>
-            </div>
+              <Upload className="mr-2.5 h-3.5 w-3.5" />
+              Publish
+            </button>
+          </div>
         </div>
       </main>
 
-      <main className="border_color--main w-full border-bF pb-5">
+      <main className="border_color--main border-bF w-full pb-5">
         <div className="mx-auto w-full max-w-4xl px-5">
           <form onSubmit={handleSubmit(submitNewDocument)}>
             <div className="space-between mt-5 flex gap-4">
@@ -150,7 +149,7 @@ const HomePage = () => {
                   placeholder="Title of your post here"
                   className="box_radius black_border mb-2.5 h-28 w-full border py-4 px-4 text-2xl font-bold leading-normal focus:border-none"
                   defaultValue=""
-                  {...register('title')}
+                  {...register("title")}
                 />
                 {errors.title && (
                   <div className="mt-2 w-full text-sm text-red-500">
@@ -161,7 +160,7 @@ const HomePage = () => {
                   placeholder="Tags or dates"
                   className="box_radius black_border mb-5 w-full border py-4 px-4 leading-normal focus:border-none"
                   defaultValue=""
-                  {...register('dates')}
+                  {...register("dates")}
                 />
               </div>
               <div className="black_border box_radius w-1/2 overflow-hidden border">
@@ -196,7 +195,7 @@ const HomePage = () => {
                       id="post_image_file_input"
                       type="file"
                       className="file_input_button_color file:box_radius file:border_color--main blockF hiddenF w-full border-none text-sm text-black file:mr-2.5 file:cursor-pointer file:border-0 file:border-solid  file:border-[neutral-150] file:py-2 file:px-2.5 file:shadow-none focus:outline-none dark:text-neutral-400"
-                      onChange={(event) => {
+                      onChange={event => {
                         setImageToUpload(event.target.files[0])
                       }}
                     />
@@ -223,17 +222,17 @@ const HomePage = () => {
 
       <main className="mx-auto mt-3 flex w-full flex-row pb-20">
         <LexicalComposer initialConfig={initialConfig}>
-          <div className="mx-auto w-full max-w-2xl border pt-1F box_radius shadow-lgF post_editor_shadow">
+          <div className="pt-1F box_radius shadow-lgF post_editor_shadow mx-auto w-full max-w-2xl border">
             <LexicalToolbar title="Edit your post here" />
             <div className="mt-1F" />
             <PlainTextPlugin
               // placeholder="This is where your awesome post begins"
               contentEditable={
-                <ContentEditable className="black_border rounded-br rounded-bl container_bg_color--primary box_radiusF min-h-post border-t p-6" />
+                <ContentEditable className="black_border container_bg_color--primary box_radiusF min-h-post rounded-br rounded-bl border-t p-6" />
               }
             />
             <OnChangePlugin
-              onChange={(editorState) => {
+              onChange={editorState => {
                 editorStateRef.current = editorState
               }}
             />

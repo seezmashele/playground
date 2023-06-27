@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-import { useAuth } from '../../../context/AuthContext'
+import Link from "next/link"
+import { Fragment } from "react"
+import { Menu, Transition } from "@headlessui/react"
+import { useAuth } from "../../../context/AuthContext"
 
 const ProfileDropdown = () => {
   const { currentUser, logout } = useAuth()
@@ -9,23 +9,23 @@ const ProfileDropdown = () => {
     logout()
   }
 
-  const getFirstletter = (displayName) => (displayName ? displayName[0] : '')
+  const getFirstletter = displayName => (displayName ? displayName[0] : "")
   const menuItems = [
     {
       userTitle: true
     },
     { divider: true },
     {
-      title: 'Profile',
-      link: '/profile'
+      title: "Profile",
+      link: "/profile"
     },
     {
-      title: 'Settings',
-      link: '/dashboard'
+      title: "Settings",
+      link: "/dashboard"
     },
     { divider: true },
     {
-      title: 'Logout',
+      title: "Logout",
       action: signUserOut
     }
   ]
@@ -36,8 +36,8 @@ const ProfileDropdown = () => {
           <Menu.Button
             className={`h-8 w-8 flex-shrink-0 cursor-pointer whitespace-nowrap rounded-full border-neutral-600 text-sm text-white ${
               currentUser
-                ? 'bg-accent-mainF bg-black hover:bg-accent-main-hover'
-                : 'hidden bg-neutral-700 hover:bg-neutral-600'
+                ? "bg-accent-mainF bg-black hover:bg-accent-main-hover"
+                : "hidden bg-neutral-700 hover:bg-neutral-600"
             }`}
           >
             {currentUser && getFirstletter(currentUser.displayName)}
@@ -51,7 +51,7 @@ const ProfileDropdown = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="dropdown_bg absolute right-0 mt-12 w-56 origin-top-right divide-y divide-neutral-100 rounded-md border-red-300 bg-white text-black shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:text-white">
+            <Menu.Items className="dropdown_bg absolute right-0 mt-12 w-60 origin-top-right divide-y divide-neutral-100 rounded-md border-neutral-400 bg-white text-black shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:text-white">
               <div className="px-1 py-1 ">
                 {menuItems &&
                   menuItems.map((item, index) => {

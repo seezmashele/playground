@@ -1,25 +1,30 @@
-import Link from 'next/link'
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
+import Link from "next/link"
+import { Fragment } from "react"
+import { Menu, Transition } from "@headlessui/react"
 import {
   Calendar2Event,
   ChatSquareText,
   Pencil,
   Plus
-} from 'react-bootstrap-icons'
+} from "react-bootstrap-icons"
 
 const PostDropdown = () => {
   const menuItems = [
     {
+      icon: <Calendar2Event className="h-3.5 w-3.5" />,
+      title: "Create Event",
+      link: "/create/event"
+    },
+    {
       icon: <ChatSquareText className="h-3.5 w-3.5" />,
-      title: 'Share your thoughts',
-      link: '/create/post'
+      title: "Create Newsletter",
+      link: "/create/post"
     },
     // { divider: true },
     {
-      icon: <Calendar2Event className="h-3.5 w-3.5" />,
-      title: 'Create an event',
-      link: '/create/event'
+      icon: <ChatSquareText className="h-3.5 w-3.5" />,
+      title: "Create Poll",
+      link: "/create/post"
     }
   ]
 
@@ -27,9 +32,9 @@ const PostDropdown = () => {
     <Menu>
       {() => (
         <>
-          <Menu.Button className="border_color--main bg-[#ff6600]F borderF flex h-full flex-shrink-0 cursor-pointer select-none items-center space-x-2.5 overflow-hidden rounded-full bg-neutral-150 pl-2.5 pr-4 text-sm  transition-shadow hover:bg-neutral-300">
+          <Menu.Button className="border_color--main bg-neutral-150F flex h-full flex-shrink-0 cursor-pointer select-none items-center space-x-2.5 overflow-hidden rounded-full border pl-2.5 pr-4 text-sm  transition-shadow hover:bg-neutral-50">
             <Plus className="h-4 w-4 flex-shrink-0" />
-            <div className="font-semiboldF whitespace-nowrap">Create</div>
+            <div className="font-semiboldF whitespace-nowrap">Create Post</div>
           </Menu.Button>
           <Transition
             as={Fragment}
@@ -40,7 +45,7 @@ const PostDropdown = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="dropdown_bg absolute right-0 mt-14 w-56 origin-top-right divide-y divide-neutral-100 rounded-md border-red-300 bg-white text-black shadow-[0_5px_25px_-5px_rgb(0_0_0_/_0.25)] ring-0 ring-black ring-opacity-5 focus:outline-none dark:text-white">
+            <Menu.Items className="dropdown_bg absolute right-0 mt-14 w-60 origin-top-right divide-y divide-neutral-100 rounded-md border border-neutral-400 bg-white text-black shadow-md ring-0 ring-black ring-opacity-5 focus:outline-none dark:text-white">
               <div className="px-1 py-1 ">
                 {menuItems &&
                   menuItems.map((item, index) => {

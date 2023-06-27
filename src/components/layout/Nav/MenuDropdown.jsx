@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-import { List, PersonFill } from 'react-bootstrap-icons'
-import { useAuth } from '../../../context/AuthContext'
+import Link from "next/link"
+import { Fragment } from "react"
+import { Menu, Transition } from "@headlessui/react"
+import { List, PersonFill } from "react-bootstrap-icons"
+import { useAuth } from "../../../context/AuthContext"
 
 const PostDropdown = () => {
   const { currentUser, logout } = useAuth()
@@ -12,30 +12,30 @@ const PostDropdown = () => {
 
   const menuItems = [
     {
-      title: 'Sign up',
+      title: "Sign up",
       semibold: true,
-      link: '/signup'
+      link: "/signup"
     },
     {
-      title: 'Login',
-      link: '/login'
-    },
-    { divider: true },
-    {
-      title: 'Profile',
-      link: '/profile'
-    },
-    {
-      title: 'Theme',
-      link: '/signup'
-    },
-    {
-      title: 'Settings',
-      link: '/settings'
+      title: "Login",
+      link: "/login"
     },
     { divider: true },
     {
-      title: 'Logout',
+      title: "Profile",
+      link: "/profile"
+    },
+    {
+      title: "Theme",
+      link: "/signup"
+    },
+    {
+      title: "Settings",
+      link: "/settings"
+    },
+    { divider: true },
+    {
+      title: "Logout",
       action: signUserOut
     }
   ]
@@ -50,10 +50,10 @@ const PostDropdown = () => {
             </div>
             <div
               className={`flex h-6 w-6 items-center justify-center rounded-full font-semibold text-white ${
-                currentUser ? 'bg-[#ff0000]' : 'bg-neutral-500'
+                currentUser ? "bg-[#ff0000]" : "bg-neutral-500"
               }`}
             >
-              {currentUser ? 'S' : <PersonFill className="h-4 w-4" />}
+              {currentUser ? "S" : <PersonFill className="h-4 w-4" />}
             </div>
           </Menu.Button>
           <Transition
@@ -65,17 +65,16 @@ const PostDropdown = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="dropdown_bg box_radius absolute right-0 mt-14 w-56 origin-top-right divide-y divide-neutral-100 bg-white text-black shadow-[0_5px_25px_-5px_rgb(0_0_0_/_0.25)] ring-0 ring-black ring-opacity-5 focus:outline-none dark:text-white">
+            <Menu.Items className="dropdown_bg box_radius absolute right-0 mt-14 w-60 origin-top-right divide-y divide-neutral-100 border border-neutral-400 bg-white text-black shadow-md ring-0 ring-black ring-opacity-5 focus:outline-none dark:text-white">
               <div className="px-1 py-1 ">
                 {menuItems &&
                   menuItems.map((item, index) => {
                     const itemKey = `profileDropdown${item.title}${index}`
                     if (item.divider) {
                       return (
-                        <div
-                          className="border_color--main my-1.5 w-full border-b dark:border-neutral-500"
-                          key={itemKey}
-                        />
+                        <div className="my-1.5 px-2" key={itemKey}>
+                          <div className="border_color--main w-full border-b dark:border-neutral-500" />
+                        </div>
                       )
                     }
                     if (item.link) {
@@ -88,7 +87,7 @@ const PostDropdown = () => {
                                 <div className="overflow-hidden">
                                   <div
                                     className={`${
-                                      item.semibold && 'font-semibold'
+                                      item.semibold && "font-semibold"
                                     } w-full`}
                                   >
                                     {item.title}

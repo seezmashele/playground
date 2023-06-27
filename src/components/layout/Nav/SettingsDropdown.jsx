@@ -1,9 +1,9 @@
 // import Link from 'next/link'
-import { Fragment } from 'react'
-import Link from 'next/link'
-import { Gear } from 'react-bootstrap-icons'
-import { Menu, Transition } from '@headlessui/react'
-import { useTheme } from 'next-themes'
+import { Fragment } from "react"
+import Link from "next/link"
+import { Gear } from "react-bootstrap-icons"
+import { Menu, Transition } from "@headlessui/react"
+import { useTheme } from "next-themes"
 
 const SettingsDropdown = () => {
   const { theme, setTheme } = useTheme()
@@ -32,7 +32,7 @@ const SettingsDropdown = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="dropdown_bg box_radius absolute right-0 mt-12 w-56 origin-top-right divide-y divide-neutral-100 text-black shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:text-white">
+            <Menu.Items className="dropdown_bg box_radius absolute right-0 mt-12 w-60 origin-top-right divide-y divide-neutral-100 border-neutral-400 text-black ring-1 ring-black ring-opacity-5 focus:outline-none dark:text-white">
               <div className="px-1 py-1 ">
                 {menuItems &&
                   menuItems.map((item, index) => {
@@ -79,7 +79,7 @@ const SettingsDropdown = () => {
                   })}
                 <button
                   onClick={() => {
-                    setTheme(theme === 'dark' ? 'light' : 'dark')
+                    setTheme(theme === "dark" ? "light" : "dark")
                   }}
                   type="button"
                   className="darkmode_transition hover_color--neutral flex w-full select-none items-center rounded-md py-2 pr-2 pl-3 text-sm"
@@ -90,13 +90,13 @@ const SettingsDropdown = () => {
                   Dark mode
                   <div
                     className={`${
-                      theme === 'dark' ? 'bg-accent-main' : 'bg-neutral-300'
+                      theme === "dark" ? "bg-accent-main" : "bg-neutral-300"
                     } darkmode_transition relative mr-0 ml-auto inline-flex h-4 w-7 items-center rounded-full`}
                   >
                     <span className="sr-only">Toggle dark mode</span>
                     <span
                       className={`${
-                        theme === 'dark' ? 'translate-x-3.5' : 'translate-x-0.5'
+                        theme === "dark" ? "translate-x-3.5" : "translate-x-0.5"
                       } inline-block h-3 w-3 transform  rounded-full bg-white transition duration-500`}
                     />
                   </div>

@@ -1,12 +1,12 @@
-import Link from 'next/link'
-import { useTheme } from 'next-themes'
-import { Search } from 'react-bootstrap-icons'
-import { navPageButtons } from './Nav/PageButtons'
+import Link from "next/link"
+import { useTheme } from "next-themes"
+import { Search } from "react-bootstrap-icons"
+import { drawerItems } from "./Drawer/DrawerItems"
 // import ProfileDropdown from './Nav/ProfileDropdown'
-import { useAuth } from '../../context/AuthContext'
-import PostDropdown from './Nav/PostDropdown'
-import MenuDropdown from './Nav/MenuDropdown'
-import SettingsDropdown from './Nav/SettingsDropdown'
+import { useAuth } from "../../context/AuthContext"
+import PostDropdown from "./Nav/PostDropdown"
+import MenuDropdown from "./Nav/MenuDropdown"
+import SettingsDropdown from "./Nav/SettingsDropdown"
 
 // import SettingsDropdown from './Nav/SettingsDropdown'
 
@@ -24,7 +24,7 @@ const Nav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
                 <img
                   className="h-full w-full object-contain object-left"
                   src={
-                    theme === 'dark' ? '/logo-min-white.svg' : '/logo-min.svg'
+                    theme === "dark" ? "/logo-min-white.svg" : "/logo-min.svg"
                   }
                   alt="playground logo"
                 />
@@ -32,9 +32,9 @@ const Nav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
             </Link>
           </div>
 
-          <div className="box_radius border_color--mainF container_bg_color--primaryF bg-neutral-150F shadow-innerF borderF bg-neutral-50F flex w-full max-w-md items-center overflow-hidden rounded-full border py-1.5 px-4 shadow-inner transition-colors dark:bg-neutral-900">
-            <Search className="mr-4" />
-            <div className="">Search</div>
+          <div className="box_radius border_color--mainF container_bg_color--primaryF bg-neutral-150F shadow-inner-sm flex w-full max-w-sm items-center overflow-hidden rounded-md border border-neutral-300 text-neutral-600  shadow-inner transition-colors dark:bg-neutral-900">
+            <div className="w-full py-1.5 px-4">Search</div>
+            <Search className="border-neutral- 500 h-9 w-12 cursor-pointer border-l bg-neutral-100 p-3 hover:bg-neutral-200" />
           </div>
 
           {/* <div
@@ -42,8 +42,8 @@ const Nav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
               hideNavButtons && 'hidden'
             }`}
           >
-            {navPageButtons &&
-              navPageButtons.map((item, index) => (
+            {drawerItems &&
+              drawerItems.map((item, index) => (
                 <Link href={item.link} passHref key={`navbutton${index}`}>
                   <div className="box_radius mx-1.5 mt-0 inline-block cursor-pointer select-none px-2">
                     <div className="mt-2 flex h-10 items-center px-1">

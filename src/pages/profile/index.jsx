@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react"
 import {
   BoxArrowUpRight,
   Globe,
@@ -7,14 +7,14 @@ import {
   Twitch,
   Twitter,
   Youtube
-} from 'react-bootstrap-icons'
-import PageHead from '../../components/misc/PageHead'
-import ProfileSidebar from '../../components/layout/ProfileSidebar'
-import EventsBlock from '../../components/blocks/EventsBlock'
-import ArticlesListBlock from '../../components/blocks/ArticlesListBlock'
-import { useDatabase } from '../../context/DatabaseContext'
-import MainDrawer from '../../components/layout/MainDrawer'
-import Nav from '../../components/layout/Nav'
+} from "react-bootstrap-icons"
+import PageHead from "../../components/misc/PageHead"
+import ProfileSidebar from "../../components/layout/ProfileSidebar"
+import EventsBlock from "../../components/blocks/EventsBlock"
+import ArticlesListBlock from "../../components/blocks/ArticlesListBlock"
+import { useDatabase } from "../../context/DatabaseContext"
+import MainDrawer from "../../components/layout/MainDrawer"
+import Nav from "../../components/layout/Nav"
 
 const HomePage = () => {
   const { useNewsPageArticles, useSidebarGroups } = useDatabase()
@@ -22,7 +22,7 @@ const HomePage = () => {
   const { sidebarGroups1 } = useSidebarGroups()
   const [tempPic, setTempPic] = useState(null)
   const [tempCover, setTempCover] = useState(null)
-  const [tempProfileName, setTempProfileName] = useState('ChloGeraghty')
+  const [tempProfileName, setTempProfileName] = useState("ChloGeraghty")
 
   useEffect(() => {
     if (sidebarGroups1 && sidebarGroups1[0]) {
@@ -44,33 +44,33 @@ const HomePage = () => {
   const usersLinks = [
     {
       icon: <Globe className="h-5 w-5" />,
-      title: 'thebiggestnoob.com',
-      color: '#8b5cf6',
-      link: '/'
+      title: "thebiggestnoob.com",
+      color: "#8b5cf6",
+      link: "/"
     },
     {
       icon: <Twitch className="h-5 w-5" />,
-      title: 'twitch.tv/dead_oryx',
-      color: '#8b5cf6',
-      link: '/'
+      title: "twitch.tv/dead_oryx",
+      color: "#8b5cf6",
+      link: "/"
     },
     {
       icon: <Twitter className="h-5 w-5" />,
-      title: 'twitter.com/dead_oryx',
-      color: '',
-      link: '/'
+      title: "twitter.com/dead_oryx",
+      color: "",
+      link: "/"
     },
     {
       icon: <Youtube className="h-5 w-5" />,
-      title: 'youtube.com/dead_oryx',
-      color: '#ff0000',
-      link: '/'
+      title: "youtube.com/dead_oryx",
+      color: "#ff0000",
+      link: "/"
     },
     {
       icon: <Instagram className="h-5 w-5" />,
-      title: 'instagram.com/dead_oryx',
-      color: '#ec4899',
-      link: '/'
+      title: "instagram.com/dead_oryx",
+      color: "#ec4899",
+      link: "/"
     }
   ]
 
@@ -78,7 +78,7 @@ const HomePage = () => {
     <>
       <PageHead title="" />
       <Nav />
-      <div className="h-12" />
+      <div className="h-10" />
 
       <div className="max-w-5xlF mx-auto ml-56 flex w-full">
         <MainDrawer />
@@ -97,19 +97,21 @@ const HomePage = () => {
                     />
                   </div>
                   <div className="mt-4 flex">
-                    <div className="container_bg_color--secondary  mr-6 ml-6 h-24 w-24 flex-shrink-0 overflow-hidden rounded-full border-4 border-white">
+                    <div className="container_bg_color--secondary mr-4 ml-4 h-32 w-32 flex-shrink-0 overflow-hidden rounded-full border-4 border-white text-black">
                       <img
                         src={tempPic}
                         draggable="false"
                         alt="temp profile pic"
                       />
                     </div>
-                    <div className="text-sm">
-                      <h3 className="text-2xl font-semibold">
+                    <div className="mt-3 text-sm">
+                      <h3 className="font-semiboldF text-2xl">
                         {tempProfileName}
                       </h3>
-                      <p className="light_text_color mt-0.5">@chlodawg911</p>
-                      <p className="mt-4 leading-relaxed">
+                      <p className="light_text_colorF mt-1.5 font-semibold text-neutral-600">
+                        @chlodawg911
+                      </p>
+                      <p className="mt-3 leading-relaxed">
                         Destroyer of sesame chicken wraps <br />
                         📺http://twitch.tv/dead_oryx
                         📷http://instagram.com/dead_oryx
@@ -120,7 +122,7 @@ const HomePage = () => {
                   <div className="sidebar_width box_radius hidden shrink-0 overflow-hidden bg-neutral-50 py-1">
                     <div className="px-5 py-3 text-base font-bold">Links</div>
                     {usersLinks &&
-                      usersLinks.map((item) => (
+                      usersLinks.map(item => (
                         <div className="user_link_button box_radius flex w-full cursor-pointer py-2 pl-5 pr-3 hover:bg-neutral-100">
                           <div className={`mr-3 text-[${item.color}]`}>
                             {item.icon}

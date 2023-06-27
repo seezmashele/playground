@@ -1,10 +1,10 @@
-@import 'config/base';
+@import "config/base";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'nav';
-@import 'footer';
-@import 'components/typography.css';
+@import "nav";
+@import "footer";
+@import "components/typography.css";
 
 img:not([src]) {
   visibility: hidden;
@@ -104,7 +104,7 @@ img:not([src]) {
   }
 
   .border_color--main {
-    @apply border-neutral-150 transition-colors duration-500 dark:border-neutral-700;
+    @apply border-neutral-200 transition-colors duration-500 dark:border-neutral-700;
   }
 
   .border_color--pagination {

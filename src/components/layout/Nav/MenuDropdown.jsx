@@ -44,7 +44,7 @@ const PostDropdown = () => {
     <Menu>
       {() => (
         <>
-          <Menu.Button className="border_color--main flex cursor-pointer items-center justify-center space-x-1 rounded-full border px-1.5 transition-shadow hover:shadow-md">
+          <Menu.Button className="border_color--main flex cursor-pointer items-center justify-center space-x-1 rounded-full border px-1.5 transition-shadow hover:bg-neutral-100">
             <div className="flex h-8 w-8 items-center justify-center">
               <List className="h-4 w-4" />
             </div>

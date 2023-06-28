@@ -1,44 +1,44 @@
-import Link from 'next/link'
-import { Calendar2Event } from 'react-bootstrap-icons'
-import ListArticleCardLoader from '../loaders/ListArticleCardLoader'
-import { getPostAge } from '../../utils/helpers/time'
+import Link from "next/link"
+import { Calendar2Event } from "react-bootstrap-icons"
+import GridCard_Event from "../loaders/GridCard_Event"
+import { getPostAge } from "../../utils/helpers/time"
 
 const CategoryCard = ({ data, isLastItem = false }) => {
   const images = [
-    '/avatars/image-1.png',
-    '/avatars/image-2.png',
-    '/avatars/image-3.png',
-    '/avatars/image-4.png',
-    '/avatars/image-5.png',
-    '/avatars/image-6.png',
-    '/avatars/image-7.png',
-    '/avatars/image-8.png',
-    '/avatars/image-9.png',
-    '/avatars/image-10.png',
-    '/avatars/image-11.png',
-    '/avatars/image-12.png',
-    '/avatars/image-13.png',
-    '/avatars/image-14.png',
-    '/avatars/image-15.png',
-    '/avatars/image-16.png',
-    '/avatars/image-17.png',
-    '/avatars/image-18.png',
-    '/avatars/image-19.png',
-    '/avatars/image-20.png'
+    "/avatars/image-1.png",
+    "/avatars/image-2.png",
+    "/avatars/image-3.png",
+    "/avatars/image-4.png",
+    "/avatars/image-5.png",
+    "/avatars/image-6.png",
+    "/avatars/image-7.png",
+    "/avatars/image-8.png",
+    "/avatars/image-9.png",
+    "/avatars/image-10.png",
+    "/avatars/image-11.png",
+    "/avatars/image-12.png",
+    "/avatars/image-13.png",
+    "/avatars/image-14.png",
+    "/avatars/image-15.png",
+    "/avatars/image-16.png",
+    "/avatars/image-17.png",
+    "/avatars/image-18.png",
+    "/avatars/image-19.png",
+    "/avatars/image-20.png"
   ]
   const cardTitle = data.title
   const cardImage = data.cover_image
-  const cardLink = data.slug ? `/event/${data.slug}` : '/'
+  const cardLink = data.slug ? `/event/${data.slug}` : "/"
   const cardTags = data.tags
-  const cardAuthor = data.author ? data.author : 'Miss Diablo'
+  const cardAuthor = data.author ? data.author : "Miss Diablo"
   const cardOverview = data.overview
   const authorImage = images[Math.floor(Math.random() * 20)]
   const postAge = getPostAge(data)
 
   return data.placeholder ? (
-    <ListArticleCardLoader isLastItem={isLastItem} />
+    <GridCard_Event isLastItem={isLastItem} />
   ) : (
-    <div className="card_container w-fullF bg-neutral-200F relative mr-4 mb-5 w-54 flex-grow overflow-hidden">
+    <div className="card_container bg-neutral-200F relative mr-4 mb-5 w-54 flex-grow-0 overflow-hidden">
       <Link
         href={cardLink}
         passHref
@@ -84,7 +84,7 @@ const CategoryCard = ({ data, isLastItem = false }) => {
           </div> */}
           <div className="light_text_color mt-3 flex hidden items-center text-sm">
             <span className="inline_publish_time text-xs">
-              {postAge || 'a long time ago'}
+              {postAge || "a long time ago"}
             </span>
             <div className="mx-1.5 h-0.5 w-0.5 rounded-full bg-neutral-500" />
             <div className="box_radius px-1 pb-0.5 text-xs">gaming, meetup</div>
@@ -97,7 +97,7 @@ const CategoryCard = ({ data, isLastItem = false }) => {
                   className="card_tag"
                 >
                   {item}
-                  {index < cardTags.length - 1 && ','}
+                  {index < cardTags.length - 1 && ","}
                 </div>
               ))}
           </div>

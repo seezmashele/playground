@@ -10,12 +10,12 @@ import SettingsDropdown from "./Nav/SettingsDropdown"
 
 // import SettingsDropdown from './Nav/SettingsDropdown'
 
-const Nav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
+const StudioNav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
   const { theme } = useTheme()
   const { currentUser } = useAuth()
 
   return (
-    <nav className="border_color--main container_bg_color--primary border-bF fixed top-0 z-40 w-full bg-opacity-95 backdrop-blur-lg">
+    <nav className="border_color--main container_bg_color--primary fixed top-0 z-40 w-full border-b bg-opacity-95 backdrop-blur-lg">
       <div className="relative mx-auto h-14 px-4">
         <div className="align-center flex h-full w-full items-center justify-between">
           <div className="flex h-7 w-48">
@@ -40,10 +40,10 @@ const Nav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
             </Link>
           </div>
 
-          <div className="box_radius main_searchbar_shadow flex w-full max-w-sm items-center overflow-hidden rounded-md border border-neutral-300 text-neutral-600 shadow-inner transition-colors dark:bg-neutral-900">
+          {/* <div className="box_radius main_searchbar_shadow flex w-full max-w-sm items-center overflow-hidden rounded-md border border-neutral-300 text-neutral-600 shadow-inner transition-colors dark:bg-neutral-900">
             <div className="w-full py-1.5 px-4">Search</div>
             <Search className="border-neutral- 500 h-9 w-12 cursor-pointer border-l bg-neutral-100 p-3 hover:bg-neutral-200" />
-          </div>
+          </div> */}
 
           {/* <div
             className={` relative mx-auto flex text-center text-sm ${
@@ -85,4 +85,4 @@ const Nav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
   )
 }
 
-export default Nav
+export default StudioNav

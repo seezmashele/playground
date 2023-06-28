@@ -1,7 +1,7 @@
-import SectionTitle from '../widgets/SectionTitle'
-import EventCard from '../cards/EventCard'
+import SectionTitle from "../widgets/SectionTitle"
+import EventCard from "../cards/EventCard"
 
-const EventsBlock = ({ events, title = '' }) => (
+const EventsBlock = ({ events, title = "" }) => (
   <>
     {title && <SectionTitle title={title} />}
     <div className="relative flex w-full flex-wrap overflow-hidden">

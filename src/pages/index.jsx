@@ -20,9 +20,9 @@ const HomePage = () => {
       <PageHead title="" />
       <Nav selectedPageIndex={homePageIndex} />
 
-      <div className="h-16" />
+      <div className="h-14" />
 
-      <div className="max_page_widthF mx-auto ml-56 flex w-full max-w-[70rem]">
+      <div className="max_page_widthF mx-auto ml-52 mt-1 flex w-full max-w-[70rem]">
         <MainDrawer selectedPageIndex={homePageIndex} />
         <div className="mt-2 w-56 flex-shrink flex-grow">
           <FeaturedBlockThin articles={homePageArticles1} />

@@ -33,9 +33,17 @@ img:not([src]) {
   opacity: 1;
 }
 
+.main_searchbar_shadow {
+  box-shadow: inset 1px 2.5px 4px -5px #000000cc;
+}
+
 @layer components {
   body {
     @apply bg-white transition-colors duration-500 dark:bg-neutral-950;
+  }
+
+  .darker_border_color {
+    @apply border-neutral-400;
   }
 
   /* use max-w-6xl for laptop screen size */
@@ -60,7 +68,7 @@ img:not([src]) {
   }
 
   .black_border {
-    @apply border-neutral-200 transition-colors duration-500 dark:border-neutral-500;
+    @apply border-neutral-400 transition-colors duration-500 dark:border-neutral-500;
   }
 
   .hover_color--neutral {

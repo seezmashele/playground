@@ -32,9 +32,9 @@ const PostDropdown = () => {
     <Menu>
       {() => (
         <>
-          <Menu.Button className="border_color--main bg-neutral-150F flex h-full flex-shrink-0 cursor-pointer select-none items-center space-x-2.5 overflow-hidden rounded-full border pl-2.5 pr-4 text-sm  transition-shadow hover:bg-neutral-50">
+          <Menu.Button className="border_color--main bg-neutral-150F flex h-full flex-shrink-0 cursor-pointer select-none items-center space-x-2.5 overflow-hidden rounded-full border pl-2.5 pr-4 text-sm  transition-shadow hover:bg-neutral-100">
             <Plus className="h-4 w-4 flex-shrink-0" />
-            <div className="font-semiboldF whitespace-nowrap">Create Post</div>
+            <div className="font-semiboldF whitespace-nowrap">Create</div>
           </Menu.Button>
           <Transition
             as={Fragment}
@@ -64,7 +64,7 @@ const PostDropdown = () => {
                           <Menu.Item>
                             {() => (
                               <div className="hover_color--neutral flex w-full select-none items-center rounded-md px-3 py-2 text-sm">
-                                <div className="mr-4 ml-0 text-accent-main">
+                                <div className="text-accent-mainF mr-4 ml-0">
                                   {item.icon}
                                 </div>
                                 <div className="overflow-hidden">

@@ -9,7 +9,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage"
 import { Calendar2Event, Image, Upload } from "react-bootstrap-icons"
 import { useMutation } from "@apollo/client"
 import DatePicker from "react-datepicker"
-import Nav from "../../components/layout/Nav"
+import StudioNav from "../../components/layout/StudioNav"
 import PageHead from "../../components/misc/PageHead"
 import { storage } from "../../utils/firebase"
 import {
@@ -20,6 +20,7 @@ import { CREATE_EVENT_MUTATION } from "../../utils/graphql/Mutations"
 import LexicalToolbar from "../../components/widgets/LexicalToolbar"
 import Footer from "../../components/layout/Footer"
 import "react-datepicker/dist/react-datepicker.css"
+import StudioDrawer from "../../components/layout/StudioDrawer"
 
 const HomePage = () => {
   const editorStateRef = useRef()
@@ -84,93 +85,96 @@ const HomePage = () => {
   return (
     <>
       <PageHead title="" />
-      <Nav hideStories />
+      <StudioNav hideStories />
 
-      <div className="mx-auto mt-[72px] mb-20 max-w-4xl rounded-lg bg-neutral-50">
-        <main className="border_color--main w-full">
-          <div className="mx-auto flex w-full items-center justify-between px-5 pt-5">
-            <div className="flex items-center space-x-3">
-              <div className="text-[#ff0000]">
-                <Calendar2Event />
+      <div>
+        <StudioDrawer selectedPageIndex={0} />
+
+        <div className="mx-autoF bg-neutral-50F ml-64 mt-[86px] mb-12 max-w-4xl rounded-lg border border-neutral-400 shadow-lg">
+          <main className="border_color--main w-full">
+            <div className="mx-auto flex w-full items-center justify-between px-5 pt-5">
+              <div className="flex items-center space-x-3">
+                <div className="text-[#ff0000]">
+                  <Calendar2Event />
+                </div>
+                <div className="whitespace-nowrap text-base">
+                  {`Creating an event as `}
+                  <span className="font-semibold">miragrox</span>
+                </div>
               </div>
-              <div className="whitespace-nowrap text-sm">
-                {`Creating an event as `}
-                <span className="font-semibold">miragrox</span>
+              <div className="flex">
+                <div
+                  role="status"
+                  className={`mr-5 flex w-auto items-center text-accent-main ${
+                    !submitting && "hidden"
+                  }`}
+                >
+                  <svg
+                    className="-ml-1 mr-3 h-5 w-5 animate-spin"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    />
+                  </svg>
+                  <div className="select-none text-sm">Uploading event</div>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleSubmit(submitNewDocument)}
+                  className="box_radius h-8F flex cursor-pointer select-none items-center bg-accent-main px-3 pt-1.5 pb-2 text-sm font-semibold text-white hover:bg-accent-main-hover"
+                >
+                  <Upload className="mr-2.5 h-3.5 w-3.5" />
+                  Publish
+                </button>
               </div>
             </div>
-            <div className="flex">
-              <div
-                role="status"
-                className={`mr-5 flex w-auto items-center text-accent-main ${
-                  !submitting && "hidden"
-                }`}
-              >
-                <svg
-                  className="-ml-1 mr-3 h-5 w-5 animate-spin"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  />
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  />
-                </svg>
-                <div className="select-none text-sm">Uploading event</div>
-              </div>
-              <button
-                type="button"
-                onClick={handleSubmit(submitNewDocument)}
-                className="box_radius h-8F flex cursor-pointer select-none items-center bg-accent-main px-3 pt-1.5 pb-2 text-sm font-semibold text-white hover:bg-accent-main-hover"
-              >
-                <Upload className="mr-2.5 h-3.5 w-3.5" />
-                Publish
-              </button>
-            </div>
-          </div>
-        </main>
+          </main>
 
-        <main className="border_color--main border-bF w-full pb-5">
-          <div className="mx-auto w-full max-w-4xl px-5">
-            <div className="mb-5 flex w-full items-center justify-end text-sm">
-              <div
-                role="status"
-                className={`mr-5 flex w-auto items-center text-accent-main ${
-                  !submitting && "hidden"
-                }`}
-              >
-                <svg
-                  className="-ml-1 mr-3 h-5 w-5 animate-spin"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
+          <main className="border_color--main border-bF w-full pb-5">
+            <div className="mx-auto w-full max-w-4xl px-5">
+              <div className="mb-5 flex w-full items-center justify-end text-sm">
+                <div
+                  role="status"
+                  className={`mr-5 flex w-auto items-center text-accent-main ${
+                    !submitting && "hidden"
+                  }`}
                 >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  />
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  />
-                </svg>
-                <div className="select-none text-sm">Uploading event</div>
-              </div>
-              {/* <button
+                  <svg
+                    className="-ml-1 mr-3 h-5 w-5 animate-spin"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    />
+                  </svg>
+                  <div className="select-none text-sm">Uploading event</div>
+                </div>
+                {/* <button
               type="button"
               onClick={handleSubmit(submitNewDocument)}
               className="box_radius flex cursor-pointer select-none items-center bg-accent-main px-3 pt-1.5 pb-2 font-semibold text-white hover:bg-accent-main-hover"
@@ -178,78 +182,78 @@ const HomePage = () => {
               <Upload className="mr-2.5 h-3.5 w-3.5" />
               Publish
             </button> */}
-            </div>
+              </div>
 
-            <form onSubmit={handleSubmit(submitNewDocument)}>
-              <div className="space-between flex gap-4">
-                <div className="w-1/2">
-                  <textarea
-                    placeholder="Event title here"
-                    className="box_radius container_bg_color--primary black_border mb-2.5 h-28 w-full border py-4 px-4 text-2xl font-bold leading-normal focus:border-none"
-                    defaultValue=""
-                    {...register("title")}
-                  />
-                  {errors.title && (
-                    <div className="mt-2 w-full text-sm text-red-500">
-                      This field is required
-                    </div>
-                  )}
-                  <div className="black_border box_radius w-full border p-3">
-                    <DatePicker
-                      selected={startDate}
-                      onChange={date => setStartDate(date)}
-                      monthsShown={2}
-                      showPopperArrow={false}
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <input
-                      placeholder="Tags or dates"
-                      className="box_radius container_bg_color--primary black_border mb-5 w-full border  py-4 px-4 leading-normal focus:border-none"
+              <form onSubmit={handleSubmit(submitNewDocument)}>
+                <div className="space-between flex gap-4">
+                  <div className="w-1/2">
+                    <textarea
+                      placeholder="Event title here"
+                      className="box_radiusF container_bg_color--primary black_borderF darker_border_color mb-2.5  h-28 w-full rounded border py-4 px-4 text-2xl font-bold leading-normal focus:border-none"
                       defaultValue=""
-                      {...register("dates")}
+                      {...register("title")}
                     />
-                  </div>
-                </div>
-                <div className="black_border box_radius w-1/2 overflow-hidden border">
-                  <div
-                    className="blockF mb-3 hidden text-sm font-medium text-neutral-900 dark:text-neutral-300"
-                    htmlFor="file_input"
-                  >
-                    Image
-                  </div>
-                  <div className="box_radiusF container_bg_color--primary black_border borderF h-56 w-full overflow-hidden">
-                    <div className="absolute z-20 flex h-56 w-full max-w-md items-center justify-center">
-                      <Image className="h-12 w-12 text-neutral-200" />
-                    </div>
-                    <img
-                      className="image_preview box_radiusF z-50 h-full w-full overflow-hidden object-cover"
-                      src={
-                        imageToUpload
-                          ? URL.createObjectURL(imageToUpload)
-                          : null
-                      }
-                      alt=""
-                    />
-                  </div>
-                  <div className="mt-0 w-full p-1">
-                    <div className="box_radius w-full cursor-pointer bg-neutral-50">
-                      <div
-                        className="mb-3 hidden text-sm font-medium text-neutral-900 dark:text-neutral-300"
-                        htmlFor="file_input"
-                      >
-                        Upload file
+                    {errors.title && (
+                      <div className="mt-2 w-full text-sm text-red-500">
+                        This field is required
                       </div>
-
-                      <input
-                        id="post_image_file_input"
-                        type="file"
-                        className="file_input_button_color file:box_radius file:border_color--main blockF hiddenF w-full border-none text-sm text-black file:mr-2.5 file:cursor-pointer file:border-0 file:border-solid  file:border-[neutral-150] file:py-2 file:px-2.5 file:shadow-none focus:outline-none dark:text-neutral-400"
-                        onChange={event => {
-                          setImageToUpload(event.target.files[0])
-                        }}
+                    )}
+                    <div className="black_borderF box_radiusF darker_border_color w-full rounded border p-3">
+                      <DatePicker
+                        selected={startDate}
+                        onChange={date => setStartDate(date)}
+                        monthsShown={2}
+                        showPopperArrow={false}
                       />
-                      {/* <div className="flex w-full justify-end">
+                    </div>
+                    <div className="mt-4">
+                      <input
+                        placeholder="Tags or dates"
+                        className="box_radius container_bg_color--primary black_border mb-5 w-full border  py-4 px-4 leading-normal focus:border-none"
+                        defaultValue=""
+                        {...register("dates")}
+                      />
+                    </div>
+                  </div>
+                  <div className="black_border box_radius w-1/2 overflow-hidden border">
+                    <div
+                      className="blockF mb-3 hidden text-sm font-medium text-neutral-900 dark:text-neutral-300"
+                      htmlFor="file_input"
+                    >
+                      Image
+                    </div>
+                    <div className="box_radiusF container_bg_color--primary black_border borderF h-56 w-full overflow-hidden">
+                      <div className="absolute z-20 flex h-56 w-full max-w-md items-center justify-center">
+                        <Image className="h-12 w-12 text-neutral-200" />
+                      </div>
+                      <img
+                        className="image_preview box_radiusF z-50 h-full w-full overflow-hidden object-cover"
+                        src={
+                          imageToUpload
+                            ? URL.createObjectURL(imageToUpload)
+                            : null
+                        }
+                        alt=""
+                      />
+                    </div>
+                    <div className="mt-0 w-full p-1">
+                      <div className="box_radius w-full cursor-pointer bg-neutral-50">
+                        <div
+                          className="mb-3 hidden text-sm font-medium text-neutral-900 dark:text-neutral-300"
+                          htmlFor="file_input"
+                        >
+                          Upload file
+                        </div>
+
+                        <input
+                          id="post_image_file_input"
+                          type="file"
+                          className="file_input_button_color file:box_radius file:border_color--main blockF hiddenF w-full border-none text-sm text-black file:mr-2.5 file:cursor-pointer file:border-0 file:border-solid  file:border-[neutral-150] file:py-2 file:px-2.5 file:shadow-none focus:outline-none dark:text-neutral-400"
+                          onChange={event => {
+                            setImageToUpload(event.target.files[0])
+                          }}
+                        />
+                        {/* <div className="flex w-full justify-end">
                       <input
                         type="button"
                         className="box_radius border_color--main container_bg_color--secondary cursor-pointer border px-2.5 py-2 text-sm text-black focus:outline-none dark:text-neutral-400"
@@ -262,36 +266,37 @@ const HomePage = () => {
                         }}
                       />
                     </div> */}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </form>
-          </div>
-        </main>
-
-        {/* <div className="border_color--main mb-5 mt-5 w-full border-b" /> */}
-
-        <main className="mx-auto mt-5 flex w-full flex-row pb-14">
-          <LexicalComposer initialConfig={initialConfig}>
-            <div className="mx-auto w-full max-w-2xl">
-              <LexicalToolbar title="Write your content stuff here" />
-              <div className="mt-1" />
-              <PlainTextPlugin
-                // placeholder="This is where your awesome post begins"
-                contentEditable={
-                  <ContentEditable className="container_bg_color--primary black_border box_radius min-h-post border p-5" />
-                }
-              />
-              <OnChangePlugin
-                onChange={editorState => {
-                  editorStateRef.current = editorState
-                }}
-              />
-              <HistoryPlugin />
+              </form>
             </div>
-          </LexicalComposer>
-        </main>
+          </main>
+
+          {/* <div className="border_color--main mb-5 mt-5 w-full border-b" /> */}
+
+          <main className="mx-auto mt-5 flex w-full flex-row pb-14">
+            <LexicalComposer initialConfig={initialConfig}>
+              <div className="mx-auto w-full max-w-2xl">
+                <LexicalToolbar title="Write your content stuff here" />
+                <div className="mt-1" />
+                <PlainTextPlugin
+                  // placeholder="This is where your awesome post begins"
+                  contentEditable={
+                    <ContentEditable className="container_bg_color--primary black_border box_radius min-h-post border p-5" />
+                  }
+                />
+                <OnChangePlugin
+                  onChange={editorState => {
+                    editorStateRef.current = editorState
+                  }}
+                />
+                <HistoryPlugin />
+              </div>
+            </LexicalComposer>
+          </main>
+        </div>
       </div>
 
       <Footer />

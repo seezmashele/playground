@@ -90,7 +90,7 @@ const HomePage = () => {
       <div>
         <StudioDrawer selectedPageIndex={0} />
 
-        <div className="mx-autoF bg-neutral-50F ml-64 mt-[86px] mb-12 max-w-4xl rounded-lg border border-neutral-400 shadow-lg">
+        <div className="mx-autoF shadow-lgF border-neutral-400F ml-64 mt-[88px] mb-12 max-w-4xl rounded-lg border border-neutral-200 bg-neutral-50">
           <main className="border_color--main w-full">
             <div className="mx-auto flex w-full items-center justify-between px-5 pt-5">
               <div className="flex items-center space-x-3">

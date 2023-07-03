@@ -29,7 +29,7 @@ const StudioNav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
                   // src={
                   //   theme === "dark" ? "/logo-min-white.svg" : "/logo-min.svg"
                   // }
-                  src={theme === "dark" ? "/logo-min-white.svg" : "/logo7.png"}
+                  src={theme === "dark" ? "/logo-min-white.svg" : "/logo31.png"}
                   alt="playground logo"
                 />
               </div>

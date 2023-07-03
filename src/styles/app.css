@@ -43,7 +43,7 @@ img:not([src]) {
   }
 
   .darker_border_color {
-    @apply border-neutral-400;
+    @apply border-neutral-300;
   }
 
   /* use max-w-6xl for laptop screen size */

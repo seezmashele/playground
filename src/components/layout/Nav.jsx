@@ -10,7 +10,11 @@ import SettingsDropdown from "./Nav/SettingsDropdown"
 
 // import SettingsDropdown from './Nav/SettingsDropdown'
 
-const Nav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
+const Nav = ({
+  hideSearch = false,
+  hideNavButtons = false,
+  selectedPageIndex = -1
+}) => {
   const { theme } = useTheme()
   const { currentUser } = useAuth()
 
@@ -23,23 +27,25 @@ const Nav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
               <List className="h-5 w-5" />
             </div>
             <Link href="/" passHref>
-              <div className="h-[32px] w-40 flex-shrink-0 cursor-pointer select-none">
+              <div className="h-7 w-40 flex-shrink-0 cursor-pointer select-none">
                 <img
                   className="h-full w-full object-contain object-left"
                   // src={
                   //   theme === "dark" ? "/logo-min-white.svg" : "/logo-min.svg"
                   // }
-                  src={theme === "dark" ? "/logo-min-white.svg" : "/logo25.png"}
+                  src={theme === "dark" ? "/logo-min-white.svg" : "/logo31.png"}
                   alt="playground logo"
                 />
               </div>
             </Link>
           </div>
 
-          <div className="box_radius main_searchbar_shadow flex w-full max-w-md items-center overflow-hidden rounded-lg border border-neutral-300 text-neutral-600 transition-colors dark:bg-neutral-900">
-            <div className="w-full py-1.5 px-4">Search</div>
-            <Search className="h-9 w-16 cursor-pointer border-l border-neutral-300 bg-neutral-100 p-2.5 hover:bg-neutral-200" />
-          </div>
+          {!hideSearch && (
+            <div className="box_radius main_searchbar_shadow flex w-full max-w-md items-center overflow-hidden rounded-lg border border-neutral-300 text-neutral-600 transition-colors dark:bg-neutral-900">
+              <div className="w-full py-1.5 px-4">Search</div>
+              <Search className="h-9 w-16 cursor-pointer border-l border-neutral-300 bg-neutral-100 p-2.5 hover:bg-neutral-200" />
+            </div>
+          )}
 
           {/* <div
             className={` relative mx-auto flex text-center text-sm ${

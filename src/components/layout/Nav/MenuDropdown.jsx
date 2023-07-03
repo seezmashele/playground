@@ -44,12 +44,12 @@ const PostDropdown = () => {
     <Menu>
       {() => (
         <>
-          <Menu.Button className="border_color--main borderF flex cursor-pointer items-center justify-center space-x-1 rounded-full bg-neutral-50 pr-1 pl-1.5 transition-shadow hover:bg-neutral-100">
+          <Menu.Button className="border_color--main borderF pr-1F flex cursor-pointer items-center justify-center space-x-1 rounded-full bg-neutral-50 pl-1.5 transition-shadow hover:bg-neutral-100">
             <div className="flex h-8 w-8 items-center justify-center">
               <List className="h-4 w-4" />
             </div>
             <div
-              className={`flex h-7 w-7 items-center justify-center rounded-full font-semibold text-white ${
+              className={`flex h-8 w-8 items-center justify-center rounded-full font-semibold text-white ${
                 currentUser ? "bg-[#3b5df5]" : "bg-neutral-500"
               }`}
             >

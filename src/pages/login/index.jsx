@@ -43,7 +43,7 @@ const LoginPage = () => {
   return (
     <>
       <PageHead title="Sign in" />
-      <Nav hideStories hideNavButtons />
+      <Nav hideSearch hideNavButtons />
 
       <div className="page_width_wide z-10 mx-auto flex w-full flex-row">
         <div className="box_radius mx-auto mt-20 w-full max-w-lg border px-4 pb-8 pt-4">

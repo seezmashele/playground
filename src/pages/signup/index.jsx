@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router'
-import { Fragment, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { Transition, Listbox } from '@headlessui/react'
+import { useRouter } from "next/router"
+import { Fragment, useState } from "react"
+import { useForm } from "react-hook-form"
+import { Transition, Listbox } from "@headlessui/react"
 // import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import { useAuth } from '../../context/AuthContext'
-import Nav from '../../components/layout/Nav'
-import PageHead from '../../components/misc/PageHead'
+import { useAuth } from "../../context/AuthContext"
+import Nav from "../../components/layout/Nav"
+import PageHead from "../../components/misc/PageHead"
 // import AppLogo from '../auth/AppLogo'
 
 const LoginPage = () => {
@@ -16,37 +16,37 @@ const LoginPage = () => {
     handleSubmit,
     formState: { errors }
   } = useForm()
-  const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState("")
   const [submitting, setSubmitting] = useState(false)
 
   const months = [
-    { name: 'January' },
-    { name: 'Febuary' },
-    { name: 'March' },
-    { name: 'April' },
-    { name: 'May' },
-    { name: 'June' },
-    { name: 'July' },
-    { name: 'August' },
-    { name: 'September' },
-    { name: 'October' },
-    { name: 'November' },
-    { name: 'December' }
+    { name: "January" },
+    { name: "Febuary" },
+    { name: "March" },
+    { name: "April" },
+    { name: "May" },
+    { name: "June" },
+    { name: "July" },
+    { name: "August" },
+    { name: "September" },
+    { name: "October" },
+    { name: "November" },
+    { name: "December" }
   ]
   const [selectedMonth, setSelectedMonth] = useState(months[0])
 
-  const convertErrorMessage = (error) => {
+  const convertErrorMessage = error => {
     switch (error) {
-      case 'auth/user-not-found':
-        return 'That account does not exist'
-      case 'auth/wrong-password':
-        return 'Email or password is incorrect'
+      case "auth/user-not-found":
+        return "That account does not exist"
+      case "auth/wrong-password":
+        return "Email or password is incorrect"
       default:
-        return 'Something went wrong'
+        return "Something went wrong"
     }
   }
 
-  const submitSignup = async (data) => {
+  const submitSignup = async data => {
     if (data) {
       setSubmitting(true)
       const result = await signup(
@@ -60,14 +60,14 @@ const LoginPage = () => {
         setErrorMessage(convertErrorMessage(result.errorCode))
         setSubmitting(false)
       } else {
-        router.push('/')
+        router.push("/")
       }
     }
   }
   return (
     <>
       <PageHead title="Sign in" />
-      <Nav hideStories hideNavButtons />
+      <Nav hideSearch hideNavButtons />
 
       <div className="page_width_wide z-10 mx-auto flex w-full flex-row">
         <div className="h-fullF textfield_radius h-96F shadow-lgF borderF bg-whiteF mx-auto mt-0 w-full max-w-md py-5">
@@ -96,7 +96,7 @@ const LoginPage = () => {
                   type="email"
                   className="textfield_radius mt-1.5 w-full border border-neutral-200 px-4 py-2.5"
                   defaultValue=""
-                  {...register('email')}
+                  {...register("email")}
                 />
                 {errors.email && (
                   <div className="mt-2 w-full text-sm text-red-500">
@@ -122,7 +122,7 @@ const LoginPage = () => {
                 <input
                   type="password"
                   className="textfield_radius mt-1.5 w-full border border-neutral-200 px-4 py-2.5"
-                  {...register('password', { required: true })}
+                  {...register("password", { required: true })}
                 />
                 {errors.password && (
                   <div className="mt-2 w-full text-sm text-red-500">
@@ -162,8 +162,8 @@ const LoginPage = () => {
                             className={({ active }) =>
                               `relative cursor-default select-none py-1 pl-5 pr-4 ${
                                 active
-                                  ? 'bg-accent-main text-white'
-                                  : 'text-neutral-900'
+                                  ? "bg-accent-main text-white"
+                                  : "text-neutral-900"
                               }`
                             }
                             value={month}
@@ -172,7 +172,7 @@ const LoginPage = () => {
                               <>
                                 <span
                                   className={`block truncate ${
-                                    selected ? 'font-medium' : 'font-normal'
+                                    selected ? "font-medium" : "font-normal"
                                   }`}
                                 >
                                   {month.name}
@@ -197,7 +197,7 @@ const LoginPage = () => {
                   placeholder="Day"
                   type="text"
                   className="textfield_radius mt-1.5 w-full border border-neutral-200 px-4 py-2.5"
-                  {...register('birthDay', {
+                  {...register("birthDay", {
                     required: true
                   })}
                 />
@@ -205,7 +205,7 @@ const LoginPage = () => {
                   placeholder="Year"
                   type="text"
                   className="textfield_radius mt-1.5 w-full border border-neutral-200 px-4 py-2.5"
-                  {...register('birthYear', {
+                  {...register("birthYear", {
                     required: true
                   })}
                 />
@@ -213,7 +213,7 @@ const LoginPage = () => {
               <div
                 role="status"
                 className={`mx-auto mt-8 flex w-auto items-center justify-center text-accent-main ${
-                  !submitting && 'hidden'
+                  !submitting && "hidden"
                 }`}
               >
                 <svg
@@ -239,11 +239,11 @@ const LoginPage = () => {
                 <div className="select-none text-sm">Creating account...</div>
               </div>
               <div className="mt-8 text-xs text-neutral-500">
-                By creating an account, I agree to the{' '}
+                By creating an account, I agree to the{" "}
                 <span className="cursor-pointer font-semibold text-theme-blue hover:underline">
                   Terms
-                </span>{' '}
-                and{' '}
+                </span>{" "}
+                and{" "}
                 <span className="cursor-pointer font-semibold text-theme-blue hover:underline">
                   Privacy Policy
                 </span>
@@ -251,7 +251,7 @@ const LoginPage = () => {
               </div>
               <div
                 className={`textfield_radius mt-8 bg-red-50 p-2 text-sm text-red-600 ${
-                  !errorMessage && 'hidden'
+                  !errorMessage && "hidden"
                 }`}
               >
                 {errorMessage}

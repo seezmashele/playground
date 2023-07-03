@@ -34,7 +34,7 @@ img:not([src]) {
 }
 
 .main_searchbar_shadow {
-  box-shadow: inset 1px 2.5px 4px -5px #000000cc;
+  box-shadow: inset 1px 2px 4px -5px #000000cc;
 }
 
 @layer components {

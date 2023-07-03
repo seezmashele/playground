@@ -97,7 +97,7 @@ const HomePage = () => {
                     />
                   </div>
                   <div className="mt-4 flex">
-                    <div className="container_bg_color--secondary mr-4 ml-4 h-32 w-32 flex-shrink-0 overflow-hidden rounded-full border-4 border-white text-black">
+                    <div className="container_bg_color--secondary mr-4 ml-4 h-28 w-28 flex-shrink-0 overflow-hidden rounded-full border-4 border-white text-black">
                       <img
                         src={tempPic}
                         draggable="false"

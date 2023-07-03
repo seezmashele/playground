@@ -23,26 +23,22 @@ const Nav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
               <List className="h-5 w-5" />
             </div>
             <Link href="/" passHref>
-              <div className="h-[30px] w-40 flex-shrink-0 cursor-pointer select-none">
+              <div className="h-[32px] w-40 flex-shrink-0 cursor-pointer select-none">
                 <img
                   className="h-full w-full object-contain object-left"
                   // src={
                   //   theme === "dark" ? "/logo-min-white.svg" : "/logo-min.svg"
                   // }
-                  src={
-                    theme === "dark"
-                      ? "/logo-min-white.svg"
-                      : "/logo-events2.png"
-                  }
+                  src={theme === "dark" ? "/logo-min-white.svg" : "/logo25.png"}
                   alt="playground logo"
                 />
               </div>
             </Link>
           </div>
 
-          <div className="box_radius main_searchbar_shadow flex w-full max-w-sm items-center overflow-hidden rounded-md border border-neutral-300 text-neutral-600 shadow-inner transition-colors dark:bg-neutral-900">
+          <div className="box_radius main_searchbar_shadow flex w-full max-w-md items-center overflow-hidden rounded-lg border border-neutral-300 text-neutral-600 transition-colors dark:bg-neutral-900">
             <div className="w-full py-1.5 px-4">Search</div>
-            <Search className="border-neutral- 500 h-9 w-12 cursor-pointer border-l bg-neutral-100 p-3 hover:bg-neutral-200" />
+            <Search className="h-9 w-16 cursor-pointer border-l border-neutral-300 bg-neutral-100 p-2.5 hover:bg-neutral-200" />
           </div>
 
           {/* <div

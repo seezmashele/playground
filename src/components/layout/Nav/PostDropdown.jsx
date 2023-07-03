@@ -19,22 +19,22 @@ const PostDropdown = () => {
       icon: <ChatSquareText className="h-3.5 w-3.5" />,
       title: "Create Newsletter",
       link: "/create/post"
-    },
-    // { divider: true },
-    {
-      icon: <ChatSquareText className="h-3.5 w-3.5" />,
-      title: "Create Poll",
-      link: "/create/post"
     }
+    // { divider: true },
+    // {
+    //   icon: <ChatSquareText className="h-3.5 w-3.5" />,
+    //   title: "Create Poll",
+    //   link: "/create/post"
+    // }
   ]
 
   return (
     <Menu>
       {() => (
         <>
-          <Menu.Button className="border_color--main bg-neutral-150F flex h-full flex-shrink-0 cursor-pointer select-none items-center space-x-2.5 overflow-hidden rounded-full border pl-2.5 pr-4 text-sm  transition-shadow hover:bg-neutral-100">
-            <Plus className="h-4 w-4 flex-shrink-0" />
-            <div className="font-semiboldF whitespace-nowrap">Create</div>
+          <Menu.Button className="border_color--main bg-neutral-150F borderF pl-2.5F flex h-full flex-shrink-0 cursor-pointer select-none items-center space-x-2.5 overflow-hidden rounded-full pl-4 pr-4 text-sm  transition-shadow hover:bg-neutral-100">
+            {/* <Plus className="h-4 w-4 flex-shrink-0" /> */}
+            <div className="font-semiboldF whitespace-nowrap">Create event</div>
           </Menu.Button>
           <Transition
             as={Fragment}

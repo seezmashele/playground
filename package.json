@@ -1,6 +1,6 @@
 {
-  "name": "playground-next-app",
-  "version": "0.8.2",
+  "name": "publikevents-app",
+  "version": "0.8.4",
   "private": true,
   "scripts": {
     "dev": "npm run open-browser && next dev -p 3400",

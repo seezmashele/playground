@@ -44,13 +44,13 @@ const PostDropdown = () => {
     <Menu>
       {() => (
         <>
-          <Menu.Button className="border_color--main flex cursor-pointer items-center justify-center space-x-1 rounded-full border px-1.5 transition-shadow hover:bg-neutral-100">
+          <Menu.Button className="border_color--main borderF flex cursor-pointer items-center justify-center space-x-1 rounded-full bg-neutral-50 pr-1 pl-1.5 transition-shadow hover:bg-neutral-100">
             <div className="flex h-8 w-8 items-center justify-center">
               <List className="h-4 w-4" />
             </div>
             <div
-              className={`flex h-6 w-6 items-center justify-center rounded-full font-semibold text-white ${
-                currentUser ? "bg-[#ff0000]" : "bg-neutral-500"
+              className={`flex h-7 w-7 items-center justify-center rounded-full font-semibold text-white ${
+                currentUser ? "bg-[#3b5df5]" : "bg-neutral-500"
               }`}
             >
               {currentUser ? "S" : <PersonFill className="h-4 w-4" />}
@@ -65,7 +65,7 @@ const PostDropdown = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="dropdown_bg box_radius absolute right-0 mt-14 w-60 origin-top-right divide-y divide-neutral-100 border border-neutral-400 bg-white text-black shadow-md ring-0 ring-black ring-opacity-5 focus:outline-none dark:text-white">
+            <Menu.Items className="dropdown_bg box_radius absolute right-0 mt-14 w-60 origin-top-right divide-y divide-neutral-100 border border-neutral-300 bg-white text-black shadow-md ring-0 ring-black ring-opacity-5 focus:outline-none dark:text-white">
               <div className="px-1 py-1 ">
                 {menuItems &&
                   menuItems.map((item, index) => {

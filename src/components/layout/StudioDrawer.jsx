@@ -14,7 +14,7 @@ const StudioDrawer = ({ selectedPageIndex = -1 }) => {
   // const { currentUser } = useAuth()
 
   return (
-    <nav className="border_color--main stickyF border-rF rounded-tr-mdF fixed top-14 left-0 flex  h-screen min-h-screen w-56 flex-shrink-0 flex-col border-r pt-5 pl-4 pr-4">
+    <nav className="border_color--main stickyF border-rF rounded-tr-mdF border-rF fixed top-14 left-0  flex h-screen min-h-screen w-56 flex-shrink-0 flex-col pt-5 pl-4 pr-4">
       {/* <Link href="/" passHref>
         <div className="ml-3 h-7 w-32 flex-shrink-0 cursor-pointer select-none">
           <img

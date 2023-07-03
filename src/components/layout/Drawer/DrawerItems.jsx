@@ -24,14 +24,14 @@ export const drawerItems = [
   },
   {
     icon: <CalendarEvent />,
-    title: "Events",
-    link: "/events"
+    title: "Following",
+    link: "/following"
   },
-  {
-    icon: <Chat />,
-    title: "Topics",
-    link: "/posts"
-  },
+  // {
+  //   icon: <Chat />,
+  //   title: "Topics",
+  //   link: "/posts"
+  // },
   { divider: true },
   // {
   //   icon: <House />,
@@ -53,11 +53,11 @@ export const drawerItems = [
     title: "Saved",
     link: "/"
   },
-  {
-    icon: <House />,
-    title: "Communities",
-    link: "/community"
-  },
+  // {
+  //   icon: <House />,
+  //   title: "Communities",
+  //   link: "/community"
+  // },
   { divider: true },
   {
     icon: <Person />,
@@ -68,5 +68,10 @@ export const drawerItems = [
     icon: <Gear />,
     title: "Settings",
     link: "/settings"
+  },
+  {
+    icon: <Gear />,
+    title: "Help",
+    link: "/help"
   }
 ]

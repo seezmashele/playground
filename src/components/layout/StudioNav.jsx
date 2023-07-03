@@ -15,7 +15,7 @@ const StudioNav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
   const { currentUser } = useAuth()
 
   return (
-    <nav className="border_color--main container_bg_color--primary fixed top-0 z-40 w-full border-b bg-opacity-95 backdrop-blur-lg">
+    <nav className="border_color--main container_bg_color--primary border-bF fixed top-0 z-40 w-full bg-opacity-95 backdrop-blur-lg">
       <div className="relative mx-auto h-14 px-4">
         <div className="align-center flex h-full w-full items-center justify-between">
           <div className="flex h-7 w-48">
@@ -23,17 +23,13 @@ const StudioNav = ({ selectedPageIndex = -1, hideNavButtons = false }) => {
               <List className="h-5 w-5" />
             </div>
             <Link href="/" passHref>
-              <div className="h-[30px] w-40 flex-shrink-0 cursor-pointer select-none">
+              <div className="h-[32px] w-40 flex-shrink-0 cursor-pointer select-none">
                 <img
                   className="h-full w-full object-contain object-left"
                   // src={
                   //   theme === "dark" ? "/logo-min-white.svg" : "/logo-min.svg"
                   // }
-                  src={
-                    theme === "dark"
-                      ? "/logo-min-white.svg"
-                      : "/logo-events2.png"
-                  }
+                  src={theme === "dark" ? "/logo-min-white.svg" : "/logo7.png"}
                   alt="playground logo"
                 />
               </div>

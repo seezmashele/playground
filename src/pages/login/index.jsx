@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { useRouter } from 'next/router'
-import Nav from '../../components/layout/Nav'
-import PageHead from '../../components/misc/PageHead'
-import { useAuth } from '../../context/AuthContext'
+import { useState } from "react"
+import { useForm } from "react-hook-form"
+import { useRouter } from "next/router"
+import Nav from "../../components/layout/Nav"
+import PageHead from "../../components/misc/PageHead"
+import { useAuth } from "../../context/AuthContext"
 
 const LoginPage = () => {
   const router = useRouter()
   const { login } = useAuth()
-  const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState("")
   const [submitting, setSubmitting] = useState(false)
   const {
     register,
@@ -16,18 +16,18 @@ const LoginPage = () => {
     formState: { errors }
   } = useForm()
 
-  const convertErrorMessage = (error) => {
+  const convertErrorMessage = error => {
     switch (error) {
-      case 'auth/user-not-found':
-        return 'That account does not exist'
-      case 'auth/wrong-password':
-        return 'Email or password is incorrect'
+      case "auth/user-not-found":
+        return "That account does not exist"
+      case "auth/wrong-password":
+        return "Email or password is incorrect"
       default:
-        return 'Something went wrong'
+        return "Something went wrong"
     }
   }
 
-  const submitLogin = async (data) => {
+  const submitLogin = async data => {
     if (data) {
       setSubmitting(true)
       const result = await login(data.email, data.password)
@@ -35,7 +35,7 @@ const LoginPage = () => {
         setErrorMessage(convertErrorMessage(result.errorCode))
         setSubmitting(false)
       } else {
-        router.push('/')
+        router.push("/")
       }
     }
   }
@@ -46,19 +46,19 @@ const LoginPage = () => {
       <Nav hideStories hideNavButtons />
 
       <div className="page_width_wide z-10 mx-auto flex w-full flex-row">
-        <div className="box_radius mx-auto mt-10 w-full max-w-md py-8 ">
+        <div className="box_radius mx-auto mt-20 w-full max-w-lg border px-4 pb-8 pt-4">
           <div className=" mt-8 px-5 text-center text-xl font-semibold">
-            Welcome back 👋
+            Log in 👋
           </div>
           <div className="mt-8 px-5 text-sm">
             <form onSubmit={handleSubmit(submitLogin)}>
               <div className="mt-5">
-                <div className="text-sm font-semibold">Email</div>
+                <div className="text-base font-semibold">Email</div>
                 <input
                   type="email"
                   className="textfield_radius bg-neutral-150F mt-1.5 w-full border border-neutral-200 px-4 pt-2.5 pb-2.5"
                   defaultValue=""
-                  {...register('email')}
+                  {...register("email")}
                 />
                 {errors.email && (
                   <div className="mt-2 w-full text-sm text-red-500">
@@ -67,11 +67,11 @@ const LoginPage = () => {
                 )}
               </div>
               <div className="">
-                <div className="mt-5 text-sm font-semibold">Password</div>
+                <div className="mt-6 text-base font-semibold">Password</div>
                 <input
                   type="password"
                   className="textfield_radius mt-1.5 w-full border border-neutral-200 px-4 py-2.5"
-                  {...register('password', { required: true })}
+                  {...register("password", { required: true })}
                 />
                 {errors.password && (
                   <div className="mt-2 w-full text-sm text-red-500">
@@ -82,7 +82,7 @@ const LoginPage = () => {
               <div
                 role="status"
                 className={`mx-auto mt-8 flex w-auto items-center justify-center text-accent-main ${
-                  !submitting && 'hidden'
+                  !submitting && "hidden"
                 }`}
               >
                 <svg
@@ -109,17 +109,17 @@ const LoginPage = () => {
               </div>
               <div
                 className={`box_radius mt-8 bg-red-50 p-2 text-sm text-red-600 ${
-                  !errorMessage && 'hidden'
+                  !errorMessage && "hidden"
                 }`}
               >
                 {errorMessage}
               </div>
               <div className="mt-8 text-xs text-neutral-500">
-                By creating an account, I agree to the{' '}
+                By creating an account, I agree to the{" "}
                 <span className="cursor-pointer font-semibold text-theme-blue hover:underline">
                   Terms
-                </span>{' '}
-                and{' '}
+                </span>{" "}
+                and{" "}
                 <span className="cursor-pointer font-semibold text-theme-blue hover:underline">
                   Privacy Policy
                 </span>

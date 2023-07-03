@@ -26,7 +26,7 @@ const HomePage = () => {
         <MainDrawer selectedPageIndex={homePageIndex} />
         <div className="mt-2 w-56 flex-shrink flex-grow">
           <FeaturedBlockThin articles={homePageArticles1} />
-          <main className="page_width_wideF page_padding_x mx-auto mt-0 w-full">
+          <main className="page_width_wideF page_padding_x mx-auto mt-4 w-full">
             <div className=" flex flex-row">
               <div className="main_content_container mt-4">
                 {/* <FeaturedStories articles={homePageArticles1} /> */}

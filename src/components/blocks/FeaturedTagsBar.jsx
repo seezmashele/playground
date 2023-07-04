@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-const FeaturedBlockThin = ({ articles }) => {
+const FeaturedTagsBar = () => {
   const tempTags = [
     "Valorant",
     "Apex Legends",
@@ -30,12 +30,11 @@ const FeaturedBlockThin = ({ articles }) => {
   tempTags2.splice(15)
 
   return (
-    <div className="page_width_wideF xs:px-0F  showSidebar:px-10F bg-neutral-50F mx-auto mt-0 flex h-10 w-full items-center px-8">
-      {/* <div className='whitespace-nowrap mr-5 text-sm'>Top Picks</div> */}
+    <div className="page_width_wideF xs:px-0F showSidebar:px-10F  bg-neutral-50F mx-auto mt-2.5 flex h-10 w-full items-center px-8">
       <div className="flex h-9 w-full flex-grow flex-wrap space-x-3 overflow-hidden">
         {tempTags2 &&
           tempTags2.map((item, index) => (
-            <Link href="/" key={`TopPick${index}`}>
+            <Link href="/" key={`featuredTag${index}`}>
               <div className="box_radius flex-shrink-0F flex-growF borderF bg-[#fffafa]F text-[#dd0000]F w-52F mb-10 flex h-8 cursor-pointer items-center justify-center overflow-hidden bg-neutral-150 transition-colors hover:bg-neutral-300">
                 <p className="mt-2.5 h-full w-full truncate px-3 pb-2 text-sm leading-snug">
                   {item}
@@ -48,4 +47,4 @@ const FeaturedBlockThin = ({ articles }) => {
   )
 }
 
-export default FeaturedBlockThin
+export default FeaturedTagsBar

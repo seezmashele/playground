@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { useTheme } from "next-themes"
 import { drawerItems } from "./Drawer/DrawerItems"
 // import ProfileDropdown from './Nav/ProfileDropdown'
 // import { useAuth } from '../../context/AuthContext'
@@ -9,12 +8,10 @@ import { drawerItems } from "./Drawer/DrawerItems"
 // import SettingsDropdown from './Nav/SettingsDropdown'
 
 const MainDrawer = ({ selectedPageIndex = -1 }) => {
-  const { theme } = useTheme()
-  const DrawerItems = [{ title: "Home", link: "/" }]
   // const { currentUser } = useAuth()
 
   return (
-    <nav className="border_color--main stickyF border-rF rounded-tr-mdF fixed top-14 left-0 flex  h-screen min-h-screen w-56 flex-shrink-0 flex-col pt-5 pl-4 pr-4">
+    <nav className="border_color--main stickyF border-rF rounded-tr-mdF fixed top-14 left-0 flex  h-screen min-h-screen w-56 flex-shrink-0 flex-col pt-2.5 pl-3 pr-3">
       {/* <Link href="/" passHref>
         <div className="ml-3 h-7 w-32 flex-shrink-0 cursor-pointer select-none">
           <img
@@ -39,7 +36,7 @@ const MainDrawer = ({ selectedPageIndex = -1 }) => {
             if (item.link) {
               return (
                 <Link href={item.link} passHref key={itemKey}>
-                  <div className="mt-0 flex cursor-pointer select-none rounded-lg py-1.5 px-2 hover:bg-neutral-100">
+                  <div className="mt-0 flex cursor-pointer select-none rounded-lg py-1.5 px-2.5 hover:bg-neutral-100">
                     <div className="mr-4 flex h-7 w-7 items-center justify-center text-base">
                       {item.icon}
                     </div>

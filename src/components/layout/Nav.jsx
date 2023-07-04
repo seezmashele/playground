@@ -22,9 +22,9 @@ const Nav = ({
     <nav className="border_color--main container_bg_color--primary border-bF fixed top-0 z-40 w-full bg-opacity-95 backdrop-blur-lg">
       <div className="relative mx-auto h-14 px-4">
         <div className="align-center flex h-full w-full items-center justify-between">
-          <div className="flex h-7 w-48">
-            <div className="text-accent-mainF mr-4 ml-0 flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-lg hover:bg-neutral-100">
-              <List className="h-5 w-5" />
+          <div className="flex h-10 w-48 items-center">
+            <div className="text-accent-mainF mr-4 ml-0 flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-100">
+              <List className="h-6 w-6" />
             </div>
             <Link href="/" passHref>
               <div className="h-7 w-40 flex-shrink-0 cursor-pointer select-none">

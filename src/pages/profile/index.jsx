@@ -88,7 +88,7 @@ const HomePage = () => {
             <div className=" mx-auto mb-1 flex h-full w-full justify-end space-x-7 pt-5 pb-7">
               <div className="space-between items-centerF max-w-4xlF flex w-full">
                 <div className="flex flex-grow flex-col">
-                  <div className="box_radius h-44 w-full overflow-hidden bg-neutral-100">
+                  <div className="box_radiusF h-44 w-full overflow-hidden rounded bg-neutral-100">
                     <img
                       src={tempCover}
                       className="h-full w-full object-cover"
@@ -97,7 +97,7 @@ const HomePage = () => {
                     />
                   </div>
                   <div className="mt-4 flex">
-                    <div className="container_bg_color--secondary mr-4 ml-4 h-28 w-28 flex-shrink-0 overflow-hidden rounded-full border-4 border-white text-black">
+                    <div className="container_bg_color--secondary mr-4 ml-4 h-32 w-32 flex-shrink-0 overflow-hidden rounded-full border-4 border-white text-black">
                       <img
                         src={tempPic}
                         draggable="false"

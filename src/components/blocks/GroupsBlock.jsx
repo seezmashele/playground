@@ -1,7 +1,7 @@
-import { ThreeDotsVertical } from 'react-bootstrap-icons'
-import ListProfileCard from '../cards/ListProfileCard'
+import { ThreeDotsVertical } from "react-bootstrap-icons"
+import ListProfileCard from "../cards/ListProfileCard"
 
-const GroupsBlock = ({ articles, title = '' }) => (
+const GroupsBlock = ({ articles, title = "" }) => (
   <>
     {title && (
       <>
@@ -9,7 +9,7 @@ const GroupsBlock = ({ articles, title = '' }) => (
           <h2 className="text-sidebar_card_titleF uppercaseF tracking-widerF pointer-events-none mb-5 select-none truncate whitespace-nowrap align-middle text-base font-semibold leading-7">
             {title}
           </h2>
-          <div className="flex hidden select-none space-x-2 text-sm">
+          <div className="hiddenF flex select-none space-x-2 text-sm">
             <button
               type="button"
               className="border_color--main h-7 whitespace-nowrap rounded-full border px-3 pb-0.5 align-middle hover:bg-neutral-100 dark:bg-neutral-700 dark:hover:bg-violet-500"

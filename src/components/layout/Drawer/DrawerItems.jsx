@@ -34,14 +34,14 @@ export const drawerItems = [
   {
     icon: <SuitHeart />,
     iconFilled: <SuitHeartFill />,
-    title: "Favourites",
-    link: "/following"
+    title: "Saved Profiles",
+    link: "/favourites"
   },
   { divider: true },
   {
     icon: <Bookmark />,
     iconFilled: <BookmarkFill />,
-    title: "Saved Events",
+    title: "Bookmarked Events",
     link: "/saved"
   },
   { divider: true },

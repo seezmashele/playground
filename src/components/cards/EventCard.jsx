@@ -27,7 +27,7 @@ const CategoryCard = ({ data, isLastItem = false }) => {
     "/avatars/image-20.png"
   ]
   const cardTitle = data.title
-  const cardImage = data.cover_image
+  const cardImage = data.coverImage
   const cardLink = data.slug ? `/event/${data.slug}` : "/"
   const cardTags = data.tags
   const cardAuthor = data.author ? data.author : "Miss Diablo"
@@ -38,11 +38,11 @@ const CategoryCard = ({ data, isLastItem = false }) => {
   return data.placeholder ? (
     <GridCard_Event isLastItem={isLastItem} />
   ) : (
-    <div className="card_container bg-neutral-200F relative mr-4 mb-5 w-54 flex-grow-0 overflow-hidden">
+    <div className="card_container bg-neutral-200F relative mr-4 mb-2 w-64 flex-grow-0 overflow-hidden">
       <Link
         href={cardLink}
         passHref
-        className="box_radius relative top-0 left-0 inline-block h-36 w-full cursor-pointer overflow-hidden"
+        className="box_radius relative top-0 left-0 inline-block h-40 w-full cursor-pointer overflow-hidden"
       >
         <div>
           <img

@@ -21,6 +21,7 @@ import LexicalToolbar from "../../components/widgets/LexicalToolbar"
 import Footer from "../../components/layout/Footer"
 import "react-datepicker/dist/react-datepicker.css"
 import StudioDrawer from "../../components/layout/StudioDrawer"
+import { createEvent } from "../../utils/firebase/createData"
 
 const HomePage = () => {
   const editorStateRef = useRef()
@@ -58,19 +59,30 @@ const HomePage = () => {
         const overview = getEditorStateOverview(editorStateRef.current)
         const itemSlug = stringToSlug(data.title)
         const dateISO = startDate ? startDate.toISOString() : null
-        const imageRef = ref(storage, `images/posts/${itemSlug}`)
+        const imageRef = ref(storage, `images/events/${itemSlug}`)
         uploadBytes(imageRef, imageToUpload).then(snapshot => {
           getDownloadURL(snapshot.ref).then(async url => {
-            await createEventMutation({
-              variables: {
+            // await createEventMutation({
+            //   variables: {
+            //     title: data.title,
+            //     editorState: editorStateString,
+            //     coverImage: url,
+            //     startDate: dateISO,
+            //     slug: itemSlug,
+            //     overview
+            //   }
+            // })
+            await createEvent(
+              {
                 title: data.title,
                 editorState: editorStateString,
                 coverImage: url,
                 startDate: dateISO,
                 slug: itemSlug,
                 overview
-              }
-            })
+              },
+              itemSlug
+            )
             setSubmitting(false)
           })
         })

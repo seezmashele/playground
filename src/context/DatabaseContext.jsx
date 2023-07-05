@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { createContext, useContext, useState, useEffect } from 'react'
-import { useQuery } from '@apollo/client/react'
+import { createContext, useContext, useState, useEffect } from "react"
+import { useQuery } from "@apollo/client/react"
 import {
   GET_SIDEBAR_ARTICLES,
   GET_HOME_PAGE_ARTICLES,
@@ -8,14 +8,14 @@ import {
   GET_TRENDING_BAR_ARTICLES,
   GET_HOME_PAGE_EVENTS,
   GET_EVENTS_PAGE_EVENTS
-} from '../utils/graphql/Queries'
+} from "../utils/graphql/Queries"
 
 import {
   fetchHomePageGroups,
   fetchGroupsPageGroups,
   fetchTrendingBarCategories,
   fetchSidebarGroups
-} from '../utils/firebase/fetchData'
+} from "../utils/firebase/fetchData"
 
 import {
   placeholderArray4,
@@ -25,7 +25,8 @@ import {
   placeholderArray12,
   placeholderArray15,
   placeholderArray20
-} from '../utils/constants/placeholders'
+} from "../utils/constants/placeholders"
+import { fetchHomePageEvents } from "../utils/firebase/fetchCollections"
 
 const DatabaseContext = createContext()
 
@@ -36,7 +37,7 @@ export const useDatabase = () => useContext(DatabaseContext)
 
 export const DatabaseProvider = ({ children }) => {
   const [homePageEvents, setHomePageEvents] = useState(null)
-  const [homePageEvents1, setHomePageEvents1] = useState(placeholderArray10)
+  const [homePageEvents1, setHomePageEvents1] = useState(placeholderArray12)
   const [homePageEvents2, setHomePageEvents2] = useState(placeholderArray6)
   const [homePageArticles, setHomePageArticles] = useState(null)
   const [homePageArticles1, setHomePageArticles1] = useState(placeholderArray6)
@@ -133,12 +134,15 @@ export const DatabaseProvider = ({ children }) => {
     return { sidebarGroups1, sidebarGroups2, sidebarGroups3 }
   }
 
-  const useHomePageEvents = () => {
+  const useHomePageEvents2 = async () => {
     const { error, data } = useQuery(GET_HOME_PAGE_EVENTS)
+    // const { data, error } = fetchHomePageEvents()
 
     useEffect(() => {
       // use useReducer to prevent re-renders
       if (data && data.events) setHomePageEvents(data.events)
+      // if (data) setHomePageEvents(data)
+      console.log("data", data)
     }, [data])
 
     useEffect(() => {
@@ -152,6 +156,29 @@ export const DatabaseProvider = ({ children }) => {
     }, [homePageEvents])
 
     return { homePageEvents1, homePageEvents2, homePageEventsError: error }
+  }
+
+  const useHomePageEvents = () => {
+    useEffect(() => {
+      const fetchData = async () => {
+        const items = await fetchHomePageEvents()
+        if (items) setHomePageEvents(items)
+      }
+      if (!homePageEvents) fetchData()
+      if (homePageEvents) {
+        const newArray1 = Array.from(homePageEvents)
+        const newArray2 = newArray1.splice(12)
+        newArray2.splice(20)
+        setHomePageEvents1(newArray1)
+        setHomePageEvents2(newArray2)
+      }
+    }, [homePageEvents])
+
+    return {
+      homePageEvents1,
+      homePageEvents2,
+      homePageEventsError: null
+    }
   }
 
   const useHomePageArticles = () => {

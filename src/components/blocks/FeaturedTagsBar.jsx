@@ -30,7 +30,7 @@ const FeaturedTagsBar = () => {
   tempTags2.splice(15)
 
   return (
-    <div className="page_width_wideF xs:px-0F showSidebar:px-10F  bg-neutral-50F mx-auto mt-2.5 flex h-10 w-full items-center px-8">
+    <div className="mt-2.5 flex h-10 w-full items-center px-7">
       <div className="flex h-9 w-full flex-grow flex-wrap space-x-3 overflow-hidden">
         {tempTags2 &&
           tempTags2.map((item, index) => (

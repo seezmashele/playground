@@ -1,12 +1,20 @@
 import {
-  House,
-  // Bell,
-  // Envelope,
-  CalendarEvent,
+  HouseDoor,
+  HouseDoorFill,
+  Collection,
+  CollectionFill,
+  SuitHeart,
+  SuitHeartFill,
   Person,
+  PersonFill,
+  People,
+  PeopleFill,
   Bookmark,
+  BookmarkFill,
   Gear,
-  Chat
+  GearFill,
+  QuestionCircle,
+  QuestionCircleFill
 } from "react-bootstrap-icons"
 
 export const homePageIndex = 0
@@ -18,59 +26,40 @@ export const settingsPageIndex = 4
 
 export const drawerItems = [
   {
-    icon: <House />,
+    icon: <HouseDoor />,
+    iconFilled: <HouseDoorFill />,
     title: "Home",
     link: "/"
   },
   {
-    icon: <CalendarEvent />,
-    title: "Following",
+    icon: <SuitHeart />,
+    iconFilled: <SuitHeartFill />,
+    title: "Favourites",
     link: "/following"
   },
-  // {
-  //   icon: <Chat />,
-  //   title: "Topics",
-  //   link: "/posts"
-  // },
   { divider: true },
-  // {
-  //   icon: <House />,
-  //   title: 'Posts',
-  //   link: '/posts'
-  // },
-  // {
-  //   icon: <Bell />,
-  //   title: 'Notifications',
-  //   link: '/'
-  // },
-  // {
-  //   icon: <Envelope />,
-  //   title: 'Messages',
-  //   link: '/'
-  // },
   {
     icon: <Bookmark />,
-    title: "Saved",
-    link: "/"
+    iconFilled: <BookmarkFill />,
+    title: "Saved Events",
+    link: "/saved"
   },
-  // {
-  //   icon: <House />,
-  //   title: "Communities",
-  //   link: "/community"
-  // },
   { divider: true },
   {
     icon: <Person />,
+    iconFilled: <PersonFill />,
     title: "Profile",
     link: "/profile"
   },
   {
     icon: <Gear />,
+    iconFilled: <GearFill />,
     title: "Settings",
     link: "/settings"
   },
   {
-    icon: <Gear />,
+    icon: <QuestionCircle />,
+    iconFilled: <QuestionCircleFill />,
     title: "Help",
     link: "/help"
   }

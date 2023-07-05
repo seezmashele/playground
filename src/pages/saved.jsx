@@ -20,12 +20,12 @@ const HomePage = () => {
       <PageHead title="" />
       <Nav selectedPageIndex={homePageIndex} />
 
-      <MainDrawer selectedPageIndex={1} />
+      <MainDrawer selectedPageIndex={3} />
       <BodyWrapper>
         <ContentFullColWrapper>
           {/* <FeaturedTagsBar /> */}
           <div className="mt-3 flex h-10 w-full items-center justify-between px-8 text-black">
-            <div className="font-semibold">Recent</div>
+            <div className="whitespace-nowrap font-semibold">Saved Events</div>
             <div className="flex h-10 w-full flex-grow flex-wrap items-center justify-end overflow-hidden">
               <div className="font-semiboldf text-accent-mainf mr-1 flex h-10 cursor-pointer items-center rounded-full px-4 text-sm hover:bg-neutral-100">
                 Manage

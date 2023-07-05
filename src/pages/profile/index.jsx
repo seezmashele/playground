@@ -11,10 +11,11 @@ import {
 import PageHead from "../../components/misc/PageHead"
 import ProfileSidebar from "../../components/layout/ProfileSidebar"
 import EventsBlock from "../../components/blocks/EventsBlock"
-import ArticlesListBlock from "../../components/blocks/ArticlesListBlock"
 import { useDatabase } from "../../context/DatabaseContext"
 import MainDrawer from "../../components/layout/MainDrawer"
 import Nav from "../../components/layout/Nav"
+import BodyWrapper from "../../components/wrappers/BodyWrapper"
+import ContentFullColWrapper from "../../components/wrappers/ContentFullColWrapper"
 
 const HomePage = () => {
   const { useNewsPageArticles, useSidebarGroups } = useDatabase()
@@ -78,14 +79,13 @@ const HomePage = () => {
     <>
       <PageHead title="" />
       <Nav />
-      <div className="h-10" />
 
-      <div className="max-w-5xlF mx-auto ml-56 flex w-full">
-        <MainDrawer />
-        <div className="">
-          <main className="border_color--main page_padding_x w-full overflow-hidden">
+      <MainDrawer selectedPageIndex={5} />
+      <BodyWrapper>
+        <ContentFullColWrapper>
+          <main className="border_color--main page_padding_xF w-full overflow-hidden pl-7 pr-2">
             {/* <div className="absolute top-0 left-0 -z-50 h-80 w-full bg-gradient-to-b from-neutral-300 to-transparent opacity-10" /> */}
-            <div className=" mx-auto mb-1 flex h-full w-full justify-end space-x-7 pt-5 pb-7">
+            <div className=" mx-auto mb-1 flex h-full w-full justify-end space-x-7 pt-2.5 pb-7">
               <div className="space-between items-centerF max-w-4xlF flex w-full">
                 <div className="flex flex-grow flex-col">
                   <div className="box_radiusF h-44 w-full overflow-hidden rounded bg-neutral-100">
@@ -108,7 +108,7 @@ const HomePage = () => {
                       <h3 className="font-semiboldF text-2xl">
                         {tempProfileName}
                       </h3>
-                      <p className="light_text_colorF mt-1.5 font-semibold text-neutral-600">
+                      <p className="light_text_colorF mt-1.5 font-semibold text-neutral-700">
                         @chlodawg911
                       </p>
                       <p className="mt-3 leading-relaxed">
@@ -150,8 +150,8 @@ const HomePage = () => {
             </div>
             {/* <ProfileSidebar /> */}
           </main>
-        </div>
-      </div>
+        </ContentFullColWrapper>
+      </BodyWrapper>
     </>
   )
 }

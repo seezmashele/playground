@@ -20,7 +20,7 @@ const HomePage = () => {
       <PageHead title="" />
       <Nav selectedPageIndex={homePageIndex} />
 
-      <MainDrawer selectedPageIndex={1} />
+      <MainDrawer selectedPageIndex={7} />
       <BodyWrapper>
         <ContentFullColWrapper>
           {/* <FeaturedTagsBar /> */}

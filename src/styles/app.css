@@ -60,7 +60,7 @@ img:not([src]) {
   }
 
   .page_padding_x {
-    @apply px-7;
+    @apply pl-7 pr-2;
   }
 
   .loader_bg_color {

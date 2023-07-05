@@ -1,13 +1,13 @@
-import Nav from '../components/layout/Nav'
-import PageHead from '../components/misc/PageHead'
-import Sidebar from '../components/layout/Sidebar'
-import Footer from '../components/layout/Footer'
-import EventsListBlock from '../components/blocks/EventsListBlock'
-import { useDatabase } from '../context/DatabaseContext'
-import { eventsPageIndex } from '../utils/constants/nav'
-import Pagination from '../components/layout/Pagination'
-import MainDrawer from '../components/layout/MainDrawer'
-import FeaturedBlockThin from '../components/blocks/FeaturedBlockThin'
+import Nav from "../components/layout/Nav"
+import PageHead from "../components/misc/PageHead"
+import Sidebar from "../components/layout/Sidebar"
+import Footer from "../components/layout/Footer"
+import EventsListBlock from "../components/blocks/EventsListBlock"
+import { useDatabase } from "../context/DatabaseContext"
+import { eventsPageIndex } from "../utils/constants/nav"
+import Pagination from "../components/layout/Pagination"
+import MainDrawer from "../components/layout/MainDrawer"
+import FeaturedTagsBar from "../components/blocks/FeaturedTagsBar"
 
 const EventsPage = () => {
   const { useEventsPageEvents, useNewsPageArticles } = useDatabase()
@@ -21,7 +21,7 @@ const EventsPage = () => {
       <div className="h-16" />
 
       <div className="mx-auto ml-56 flex w-full max-w-5xl">
-        <FeaturedBlockThin articles={newsPageArticles1} />
+        <FeaturedTagsBar articles={newsPageArticles1} />
       </div>
       <div className="mx-auto ml-56 flex w-full max-w-5xl">
         <MainDrawer selectedPageIndex={eventsPageIndex} />

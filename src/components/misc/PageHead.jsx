@@ -5,7 +5,7 @@ const PageHead = ({ title = "" }) => (
     <title>
       {title
         ? `${title} - Publik Events`
-        : "Find & share great events - Publik Events"}
+        : "Find & share events - Publik Events"}
     </title>
     <meta
       name="viewport"

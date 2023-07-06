@@ -46,7 +46,6 @@ export const fetchHomePageEvents = async () => {
   const newItems = []
   querySnapshot.forEach(doc => {
     const docData = doc.data()
-    console.log("docData ", docData)
     newItems.push({
       slug: docData.slug,
       title: docData.title,

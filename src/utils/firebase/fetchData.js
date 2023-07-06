@@ -1,9 +1,9 @@
-import { doc, getDoc } from 'firebase/firestore'
-import { firestore } from '../firebase'
+import { doc, getDoc } from "firebase/firestore"
+import { firestore } from "../firebase"
 
 export const fetchHomePageEvents = async () => {
   try {
-    const docRef = doc(firestore, 'app-content/events-page-items')
+    const docRef = doc(firestore, "app-content/events-page-items")
     const docSnapshot = await getDoc(docRef)
     if (docSnapshot.exists()) {
       const data = docSnapshot.data()
@@ -18,7 +18,7 @@ export const fetchHomePageEvents = async () => {
 
 export const fetchHomePageArticles = async () => {
   try {
-    const docRef = doc(firestore, 'app-content/home-page-items')
+    const docRef = doc(firestore, "app-content/home-page-items")
     const docSnapshot = await getDoc(docRef)
     if (docSnapshot.exists()) {
       const data = docSnapshot.data()
@@ -33,7 +33,7 @@ export const fetchHomePageArticles = async () => {
 
 export const fetchHomePageGroups = async () => {
   try {
-    const docRef = doc(firestore, 'app-content/groups-page-items')
+    const docRef = doc(firestore, "app-content/groups-page-items")
     const docSnapshot = await getDoc(docRef)
     if (docSnapshot.exists()) {
       const data = docSnapshot.data()
@@ -47,7 +47,7 @@ export const fetchHomePageGroups = async () => {
   return null
 }
 
-export const fetchArticleBySlug = async (slug) => {
+export const fetchArticleBySlug = async slug => {
   if (slug) {
     try {
       const docRef = doc(firestore, `articles/${slug}`)
@@ -65,7 +65,7 @@ export const fetchArticleBySlug = async (slug) => {
 
 export const fetchEventsPageEvents = async () => {
   try {
-    const docRef = doc(firestore, 'app-content/events-page-items')
+    const docRef = doc(firestore, "app-content/events-page-items")
     const docSnapshot = await getDoc(docRef)
     if (docSnapshot.exists()) {
       const data = docSnapshot.data()
@@ -79,7 +79,8 @@ export const fetchEventsPageEvents = async () => {
   return null
 }
 
-export const fetchEventBySlug = async (slug) => {
+export const fetchEventBySlug = async slug => {
+  console.log("fetching event")
   if (slug) {
     try {
       const docRef = doc(firestore, `events/${slug}`)
@@ -97,7 +98,7 @@ export const fetchEventBySlug = async (slug) => {
 
 export const fetchTrendingBarCategories = async () => {
   try {
-    const docRef = doc(firestore, 'app-content/trending-bar-items')
+    const docRef = doc(firestore, "app-content/trending-bar-items")
     const docSnapshot = await getDoc(docRef)
     if (docSnapshot.exists()) {
       const data = docSnapshot.data()
@@ -113,7 +114,7 @@ export const fetchTrendingBarCategories = async () => {
 
 export const fetchGroupsPageGroups = async () => {
   try {
-    const docRef = doc(firestore, 'app-content/groups-page-items')
+    const docRef = doc(firestore, "app-content/groups-page-items")
     const docSnapshot = await getDoc(docRef)
     if (docSnapshot.exists()) {
       const data = docSnapshot.data()
@@ -129,7 +130,7 @@ export const fetchGroupsPageGroups = async () => {
 
 export const fetchSidebarArticles = async () => {
   try {
-    const docRef = doc(firestore, 'app-content/home-page-items')
+    const docRef = doc(firestore, "app-content/home-page-items")
     const docSnapshot = await getDoc(docRef)
     if (docSnapshot.exists()) {
       const data = docSnapshot.data()
@@ -145,7 +146,7 @@ export const fetchSidebarArticles = async () => {
 
 export const fetchSidebarGroups = async () => {
   try {
-    const docRef = doc(firestore, 'app-content/groups-page-items')
+    const docRef = doc(firestore, "app-content/groups-page-items")
     const docSnapshot = await getDoc(docRef)
     if (docSnapshot.exists()) {
       const data = docSnapshot.data()
@@ -161,7 +162,7 @@ export const fetchSidebarGroups = async () => {
 
 export const fetchNewsPageArticles = async () => {
   try {
-    const docRef = doc(firestore, 'app-content/news-page-items')
+    const docRef = doc(firestore, "app-content/news-page-items")
     const docSnapshot = await getDoc(docRef)
     if (docSnapshot.exists()) {
       const data = docSnapshot.data()

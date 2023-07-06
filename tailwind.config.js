@@ -29,7 +29,7 @@ module.exports = {
         34: "8.5rem",
         54: "13.5rem",
         84: "21rem",
-        sidebar: "28%",
+        sidebar: "500px",
         sidebar_xs: "30%"
       },
       minWidth: {

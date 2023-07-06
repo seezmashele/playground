@@ -99,7 +99,7 @@ const HomePage = () => {
       <PageHead title="" />
       <Nav hideSearch showBorder />
 
-      <div className="fixed -z-40 h-full w-full bg-[#fcfcfc]" />
+      {/* <div className="fixed -z-40 h-full w-full bg-[#fcfcfc]" /> */}
 
       <div>
         <StudioDrawer selectedPageIndex={0} />

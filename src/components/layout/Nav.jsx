@@ -21,7 +21,7 @@ const Nav = ({
 
   return (
     <nav
-      className={`border_color--main container_bg_color--primary border-bF fixed top-0 z-40 w-full bg-opacity-95 backdrop-blur-lg ${
+      className={`border_color--main container_bg_color--primary fixed top-0 z-40 w-full bg-opacity-95 backdrop-blur-lg ${
         showBorder && "border-b"
       }`}
     >
@@ -46,7 +46,7 @@ const Nav = ({
           </div>
 
           {!hideSearch && (
-            <div className="box_radius main_searchbar_shadow flex w-full max-w-md items-center overflow-hidden rounded-lg border border-neutral-300 bg-white text-neutral-600 transition-colors dark:bg-neutral-900">
+            <div className="box_radius main_searchbar_shadow flex w-full max-w-md items-center overflow-hidden rounded-full border border-neutral-300 bg-white text-neutral-600 transition-colors dark:bg-neutral-900">
               <div className="w-full py-1.5 px-4">Search</div>
               <Search className="h-9 w-16 cursor-pointer border-l border-neutral-300 bg-neutral-100 p-2.5 hover:bg-neutral-200" />
             </div>

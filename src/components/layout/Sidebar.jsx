@@ -1,9 +1,9 @@
 // import { Search } from 'react-bootstrap-icons'
-import SidebarTitle from '../widgets/SidebarTitle'
-import { useDatabase } from '../../context/DatabaseContext'
-import SidebarTopic from './Sidebar/SidebarTopic'
-import SidebarProfile from './Sidebar/SidebarProfile'
-import SidebarArticleCard from './Sidebar/SidebarArticleCard'
+import SidebarTitle from "../widgets/SidebarTitle"
+import { useDatabase } from "../../context/DatabaseContext"
+import SidebarTopic from "./Sidebar/SidebarTopic"
+import SidebarProfile from "./Sidebar/SidebarProfile"
+import SidebarArticleCard from "./Sidebar/SidebarArticleCard"
 
 const Sidebar = () => {
   const { useSidebarGroups, useSidebarArticles } = useDatabase()
@@ -11,29 +11,29 @@ const Sidebar = () => {
   const { sidebarArticles1 } = useSidebarArticles()
 
   const tempTags = [
-    'Valorant',
-    'Apex Legends',
-    'Twitch',
-    'YouTube',
-    'Overwatch',
-    'MMO',
-    'Fifa',
-    'Sandbox',
-    'Indie',
-    'Tournament',
-    'Guide',
-    'Rocket League',
-    'Sea of Thieves',
-    'Minecraft',
-    'Dota',
-    'Rust',
-    'GTA',
-    'V Rising',
-    'Vanguard',
-    'Cyberpunk',
-    'Skyrim',
-    'Announcement',
-    'Cosplay'
+    "Valorant",
+    "Apex Legends",
+    "Twitch",
+    "YouTube",
+    "Overwatch",
+    "MMO",
+    "Fifa",
+    "Sandbox",
+    "Indie",
+    "Tournament",
+    "Guide",
+    "Rocket League",
+    "Sea of Thieves",
+    "Minecraft",
+    "Dota",
+    "Rust",
+    "GTA",
+    "V Rising",
+    "Vanguard",
+    "Cyberpunk",
+    "Skyrim",
+    "Announcement",
+    "Cosplay"
   ]
   const tempTags2 = tempTags.splice(9)
   tempTags2.splice(9)

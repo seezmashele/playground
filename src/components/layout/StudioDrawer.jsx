@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { drawerItems } from "./Drawer/DrawerItems"
+import { drawerItems } from "./Drawer/StudioDrawerItems"
 
 const StudioDrawer = ({ selectedPageIndex = -1 }) => {
   return (

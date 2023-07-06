@@ -97,20 +97,21 @@ const HomePage = () => {
   return (
     <>
       <PageHead title="" />
-      <Nav hideSearch />
+      <Nav hideSearch showBorder />
+
+      <div className="fixed -z-40 h-full w-full bg-[#fcfcfc]" />
 
       <div>
         <StudioDrawer selectedPageIndex={0} />
-
         <div className="ml-64 mt-[54px] mb-12 max-w-4xl">
-          <main className="border_color--main w-full pb-3.5">
+          <main className="border_color--main w-full border-b pb-3.5">
             <div className="mx-auto flex w-full select-none items-center justify-between pt-5">
               <div className="flex items-center space-x-3">
                 {/* <div className="text-[#ff0000]">
                   <PersonCircle />
                 </div> */}
-                <div className="font-semiboldf whitespace-nowrap text-base">
-                  {`Create that awesome event 😃`}
+                <div className="whitespace-nowrap text-lg font-semibold">
+                  {`Create event 🖊️`}
                 </div>
               </div>
               <div className="flex items-center">
@@ -142,12 +143,8 @@ const HomePage = () => {
                   </svg>
                   <div className="select-none text-sm">Uploading event</div>
                 </div>
-                <div className="text-neutral-00F mr-5 flex items-center text-sm">
-                  <div className="text-accent-mainf mr-1.5">
-                    {/* <PersonCircle className="h-[18px] w-[18px]" /> */}
-                    Profile:
-                  </div>
-                  <span className="font-semibold text-black">lemon_maiden</span>
+                <div className="text-neutral-00F mr-5 flex items-center rounded-full bg-neutral-50 px-2 pt-0.5 pb-1 text-xs text-accent-main">
+                  Unsaved changes
                 </div>
                 <button
                   type="button"
@@ -160,7 +157,7 @@ const HomePage = () => {
               </div>
             </div>
           </main>
-          <div className=" border-neutral-200] borderF rounded-lg bg-neutral-50">
+          <div className=" rounded-lgF borderF border-neutral-200F">
             <main className="border_color--main border-bF w-full pb-5">
               <div className="mx-auto w-full max-w-4xl px-5">
                 <div className="mb-5 flex w-full items-center justify-end text-sm">

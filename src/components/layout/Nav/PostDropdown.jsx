@@ -17,8 +17,8 @@ const PostDropdown = () => {
     },
     {
       icon: <ChatSquareText className="h-3.5 w-3.5" />,
-      title: "Create Newsletter",
-      link: "/create/post"
+      title: "View Dashboard",
+      link: "/create/dashboard"
     }
     // { divider: true },
     // {
@@ -45,7 +45,7 @@ const PostDropdown = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="dropdown_bg absolute right-0 mt-14 w-60 origin-top-right divide-y divide-neutral-100 rounded-md border border-neutral-300 bg-white text-black shadow-md ring-0 ring-black ring-opacity-5 focus:outline-none dark:text-white">
+            <Menu.Items className="dropdown_bg absolute right-0 mt-14 w-60 origin-top-right divide-y divide-neutral-100 rounded-md border border-neutral-200 bg-white text-black shadow-md ring-0 ring-black ring-opacity-5 focus:outline-none dark:text-white">
               <div className="px-1 py-1 ">
                 {menuItems &&
                   menuItems.map((item, index) => {

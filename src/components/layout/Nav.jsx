@@ -11,6 +11,7 @@ import SettingsDropdown from "./Nav/SettingsDropdown"
 // import SettingsDropdown from './Nav/SettingsDropdown'
 
 const Nav = ({
+  showBorder = false,
   hideSearch = false,
   hideNavButtons = false,
   selectedPageIndex = -1
@@ -19,7 +20,11 @@ const Nav = ({
   const { currentUser } = useAuth()
 
   return (
-    <nav className="border_color--main container_bg_color--primary border-bF fixed top-0 z-40 w-full bg-opacity-95 backdrop-blur-lg">
+    <nav
+      className={`border_color--main container_bg_color--primary border-bF fixed top-0 z-40 w-full bg-opacity-95 backdrop-blur-lg ${
+        showBorder && "border-b"
+      }`}
+    >
       <div className="relative mx-auto h-14 px-4">
         <div className="align-center flex h-full w-full items-center justify-between">
           <div className="flex h-10 w-48 items-center">
@@ -41,7 +46,7 @@ const Nav = ({
           </div>
 
           {!hideSearch && (
-            <div className="box_radius main_searchbar_shadow flex w-full max-w-md items-center overflow-hidden rounded-lg border border-neutral-300 text-neutral-600 transition-colors dark:bg-neutral-900">
+            <div className="box_radius main_searchbar_shadow flex w-full max-w-md items-center overflow-hidden rounded-lg border border-neutral-300 bg-white text-neutral-600 transition-colors dark:bg-neutral-900">
               <div className="w-full py-1.5 px-4">Search</div>
               <Search className="h-9 w-16 cursor-pointer border-l border-neutral-300 bg-neutral-100 p-2.5 hover:bg-neutral-200" />
             </div>
@@ -78,7 +83,16 @@ const Nav = ({
 
           <div className="relative flex h-9 w-48 flex-shrink select-none justify-end space-x-2.5 text-sm">
             {/* <SettingsDropdown /> */}
-            {currentUser && <PostDropdown />}
+            {currentUser && (
+              <Link href="/create/event" passHref>
+                <button className="border_color--main bg-neutral-150F borderF pl-2.5F flex h-full flex-shrink-0 cursor-pointer select-none items-center space-x-2.5 overflow-hidden rounded-full pl-4 pr-4 text-sm  transition-shadow hover:bg-neutral-100">
+                  {/* <Plus className="h-4 w-4 flex-shrink-0" /> */}
+                  <div className="font-semiboldF whitespace-nowrap">
+                    Create event
+                  </div>
+                </button>
+              </Link>
+            )}
             <MenuDropdown currentUser={currentUser} />
           </div>
         </div>

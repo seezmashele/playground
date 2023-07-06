@@ -167,8 +167,8 @@ export const DatabaseProvider = ({ children }) => {
       if (!homePageEvents) fetchData()
       if (homePageEvents) {
         const newArray1 = Array.from(homePageEvents)
-        const newArray2 = newArray1.splice(12)
-        newArray2.splice(20)
+        const newArray2 = newArray1.splice(24)
+        newArray2.splice(24)
         setHomePageEvents1(newArray1)
         setHomePageEvents2(newArray2)
       }

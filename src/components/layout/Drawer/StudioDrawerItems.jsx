@@ -28,7 +28,7 @@ export const drawerItems = [
   {
     icon: <HouseDoor />,
     iconFilled: <HouseDoorFill />,
-    title: "Home",
+    title: "Dashboard",
     link: "/"
   },
   {

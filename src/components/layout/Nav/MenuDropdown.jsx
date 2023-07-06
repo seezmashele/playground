@@ -65,14 +65,14 @@ const PostDropdown = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="dropdown_bg box_radius absolute right-0 mt-14 w-60 origin-top-right divide-y divide-neutral-100 border border-neutral-300 bg-white text-black shadow-md ring-0 ring-black ring-opacity-5 focus:outline-none dark:text-white">
+            <Menu.Items className="dropdown_bg box_radius absolute right-0 mt-14 w-64 origin-top-right divide-y divide-neutral-100 border border-neutral-200 bg-white px-0 text-black shadow-lg ring-0 ring-black ring-opacity-5 focus:outline-none dark:text-white">
               <div className="px-1 py-1 ">
                 {menuItems &&
                   menuItems.map((item, index) => {
                     const itemKey = `profileDropdown${item.title}${index}`
                     if (item.divider) {
                       return (
-                        <div className="my-1.5 px-2" key={itemKey}>
+                        <div className="px-2f my-1.5" key={itemKey}>
                           <div className="border_color--main w-full border-b dark:border-neutral-500" />
                         </div>
                       )
@@ -83,7 +83,7 @@ const PostDropdown = () => {
                           <Menu.Item>
                             {() => (
                               <div className="hover_color--neutral flex w-full select-none items-center rounded-md px-3 py-2 text-sm">
-                                {/* <div className="mr-4 ml-1">{item.icon}</div> */}
+                                <div className="mr-4 ml-1">{item.icon}</div>
                                 <div className="overflow-hidden">
                                   <div
                                     className={`${

@@ -48,7 +48,7 @@ const Nav = ({
           {!hideSearch && (
             <div className="box_radius main_searchbar_shadow flex w-full max-w-md items-center overflow-hidden rounded-full border border-neutral-300 bg-white text-neutral-600 transition-colors dark:bg-neutral-900">
               <div className="w-full py-1.5 px-4">Search</div>
-              <Search className="h-9 w-16 cursor-pointer border-l border-neutral-300 bg-neutral-100 p-2.5 hover:bg-neutral-200" />
+              <Search className="border-lf bg-neutral-100f mr-0.5 h-8 w-16 cursor-pointer rounded-full border-neutral-300 p-2.5 hover:bg-neutral-100" />
             </div>
           )}
 

@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Calendar2Event, ChevronDown } from "react-bootstrap-icons"
 import GridCard_Event from "../loaders/GridCard_Event"
 import { getPostAge } from "../../utils/helpers/time"
+import OptionsDropdown from "./dropdowns/OptionsDropdown"
 
 const ProfileCard_Grid = ({ data, isLastItem = false }) => {
   const images = [
@@ -38,8 +39,8 @@ const ProfileCard_Grid = ({ data, isLastItem = false }) => {
   return data.placeholder ? (
     <GridCard_Event isLastItem={isLastItem} />
   ) : (
-    <div className="card_container relative mr-4 mb-4 flex w-64 flex-grow-0 flex-col items-center overflow-hidden rounded-lg border p-3">
-      <div className="space-between flex w-full items-center">
+    <div className="card_container overflow-hiddenf relative mr-4 mb-4 flex w-64 flex-grow-0 flex-col items-center rounded-lg border p-3">
+      <div className="space-between items-centerf z-50f flex w-full">
         <Link
           href={cardLink}
           passHref
@@ -54,11 +55,12 @@ const ProfileCard_Grid = ({ data, isLastItem = false }) => {
             />
           </div>
         </Link>
-        <div className="bg-neutral-100f mr-0 ml-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border hover:bg-neutral-50">
+        <OptionsDropdown className="" />
+        {/* <div className="bg-neutral-100f mr-0 ml-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border hover:bg-neutral-50">
           <ChevronDown />
-        </div>
+        </div> */}
       </div>
-      <div className="space-x-10F flex w-full select-none">
+      <div className="space-x-10F -z-10 flex w-full select-none">
         <div className="relative inline-block w-1/2 flex-grow">
           <div className="mt-2 flex text-sm">
             {/* <span className="inline_author mr-1 font-bold">itzJankMaster</span> */}

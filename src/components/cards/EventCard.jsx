@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { Calendar2Event } from "react-bootstrap-icons"
-import GridCard_Event from "../loaders/GridCard_Event"
 import { getPostAge } from "../../utils/helpers/time"
 
 const CategoryCard = ({ data, isLastItem = false }) => {
@@ -35,9 +34,7 @@ const CategoryCard = ({ data, isLastItem = false }) => {
   const authorImage = images[Math.floor(Math.random() * 20)]
   const postAge = getPostAge(data)
 
-  return data.placeholder ? (
-    <GridCard_Event isLastItem={isLastItem} />
-  ) : (
+  return (
     <div className="card_container bg-neutral-200F relative mr-4 mb-2 w-64 flex-grow-0 overflow-hidden">
       <Link
         href={cardLink}

@@ -87,7 +87,7 @@ const EventPage = () => {
       <BodyWrapper>
         <ContentFullColWrapper>
           <main className="w-full">
-            <div className="page_padding_x flex max-w-5xl flex-row">
+            <div className="page_padding_x flex max-w-[66rem] flex-row">
               <div className="mr-6 mt-6 max-w-3xl">
                 <div className="card_containerf relative mt-1 mb-7 w-full flex-grow">
                   <div className="flex w-full select-none">
@@ -113,14 +113,26 @@ const EventPage = () => {
                         {postTitle}
                       </div>
 
-                      <div className="light_text_color mt-3 flex items-center text-xs uppercase">
-                        <span className="inline_publish_time">
-                          Posted: 9 August 2023
-                        </span>
-                        <div className="mx-1.5 h-0.5 w-0.5 rounded-full bg-neutral-500" />
-                        <div className="box_radius px-1 pb-0.5">gaming</div>
+                      <div className="light_text_colorf mt-3 flex items-center text-xs text-neutral-700">
+                        <div className="flex flex-grow items-center uppercase">
+                          <span className="inline_publish_time">
+                            Posted: 9 Aug 2022
+                          </span>
+                          <div className="mx-1.5 h-0.5 w-0.5 rounded-full bg-neutral-500" />
+                          <div className="box_radius px-1 pb-0.5">
+                            Updated 14 June 2023
+                          </div>
+                        </div>
+                        <div className="text-neutral- flex space-x-1">
+                          <div className="rounded-lg bg-neutral-100 p-1 px-2">
+                            Gaming
+                          </div>
+                          <div className="rounded-lg bg-neutral-100 p-1 px-2">
+                            Anime
+                          </div>
+                        </div>
                       </div>
-                      <div className="mt-5 flex space-x-3">
+                      <div className="mt-2 flex space-x-3">
                         {/* <div className="box_radius flex cursor-pointer items-center space-x-3 bg-neutral-50 py-2 px-3">
                       <HeartFill />
                       <div className="text-sm">Like</div>
